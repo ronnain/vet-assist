@@ -18,10 +18,13 @@
     "@nestjs/platform-express": "^10.0.2",
     "@nx/angular": "16.6.0",
     "@prisma/client": "^5.1.1",
+    "@ts-rest/core": "^3.27.0",
+    "@ts-rest/nest": "^3.27.0",
     "axios": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "zod": "^3.21.4",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

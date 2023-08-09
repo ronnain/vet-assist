@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vet-assist/api-contract": ["libs/api-contract/src/index.ts"],
+      "@vet-assist/ts-rest-contract": ["libs/ts-rest-contract/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

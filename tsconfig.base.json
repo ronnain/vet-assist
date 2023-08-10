@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@vet-assist/api-contract": ["libs/api-contract/src/index.ts"],
-      "@vet-assist/ts-rest-contract": ["libs/ts-rest-contract/src/index.ts"]
+      "@vet-assist/ts-rest-contract": ["libs/ts-rest-contract/src/index.ts"],
+      "@vet-assist/zod-types-from-prisma": ["libs/zod-types-from-prisma/src/lib/schemas/index.ts"],
+      "@vet-assist/zod-types-from-prisma/enums": ["libs/zod-types-from-prisma/src/lib/schemas/enums/index.ts"],
+      "@vet-assist/zod-types-from-prisma/objects": ["libs/zod-types-from-prisma/src/lib/schemas/objects/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

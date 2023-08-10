@@ -1,0 +1,16 @@
+{
+  "name": "zod-types-from-prisma",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zod-types-from-prisma/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/zod-types-from-prisma/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

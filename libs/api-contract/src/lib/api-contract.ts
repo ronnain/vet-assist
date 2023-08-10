@@ -1,5 +1,7 @@
 import { initContract } from '@ts-rest/core';
 import { z } from 'zod';
+import { PostFindManySchema } from '@vet-assist/zod-types-from-prisma';
+
 
 const c = initContract();
 
@@ -11,8 +13,7 @@ const PostSchema = z.object({
   authorId: z.number().nullable()
 });
 
-const CreatePostSchema = PostSchema.omit({ id: true });
-
+// TODO EXPOSE ALL SCHEMAS FROM PISMA GENERATED TYPES
 
 export const contract = c.router({
   createPost: {
@@ -21,7 +22,7 @@ export const contract = c.router({
     responses: {
       201: PostSchema,
     },
-    body: CreatePostSchema,
+    body: PostFindManySchema,
     summary: 'Create a post',
   },
   getPost: {

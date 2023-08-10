@@ -19,14 +19,15 @@ export class AppComponent {
       baseUrl: 'http://localhost:3000',
       baseHeaders: {},
     });
-    
+
     const { body, status } = await client.createPost({
       body: {
         title: 'Post Title',
-        body: 'Post Body',
+        content: 'lol content',
+        published: false,
       },
     });
-    
+
     if (status === 201) {
       // body is Post
       console.log(body);

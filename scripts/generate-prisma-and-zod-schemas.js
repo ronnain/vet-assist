@@ -13,30 +13,42 @@ const generatedZodSchemaPath = path.join(initialPath, './libs/zod-types-from-pri
 console.log('prismaPath', prismaPath);
 console.log('generatedZodSchemaPath', generatedZodSchemaPath);
 
-// Utilisation de glob pour obtenir la liste des fichiers
-const files = glob.sync(`${generatedZodSchemaPath}{/**/*.ts,/**/*.tsx}`);
+exec(`cd ${prismaPath} && npx prisma generate`, (err, stdout, stderr) => {
+  if (err) {
+    console.error();
+    console.error("Error:");
+    console.error(err);
+    console.error();
+  }
+  console.log(stdout);
+  console.error(stderr);
+});
 
-// Affichage des noms de fichiers
-console.log('Liste des fichiers :');
-const filesMapped = files
-  .map(file => path.normalize(file).replace(generatedZodSchemaPath + '\\', ''))
-  .map(file => file.split('\\'))
-  .reduce((acc, file) => {
-    const key = file.length === 1 ? '' : file[0];
-    const value = file.length === 1 ? file[0] : file[1];
-    if (!acc[key]) {
-      acc[key] = [];
-    }
-    acc[key].push(value);
-    return acc;
-  }, {});
+// // Utilisation de glob pour obtenir la liste des fichiers
+// const files = glob.sync(`${generatedZodSchemaPath}{/**/*.ts,/**/*.tsx}`);
 
-  Object.keys(filesMapped)
-    .forEach(key => {
-      const associatedFiles = filesMapped[key]
-        .map(file => file.replace('.ts', ''))
-        .map(file => `export * from './${file}';`)
-        .join('\n');
-      fs.writeFileSync(`${generatedZodSchemaPath}${key ? '/' + key + '/' : ''}/index.ts`, associatedFiles);
-    });
+// // Affichage des noms de fichiers
+// console.log('Liste des fichiers :');
+// const filesMapped = files
+//   .filter(file => !file.includes('index.ts'))
+//   .map(file => path.normalize(file).replace(generatedZodSchemaPath + '\\', ''))
+//   .map(file => file.split('\\'))
+//   .reduce((acc, file) => {
+//     const key = file.length === 1 ? '' : file[0];
+//     const value = file.length === 1 ? file[0] : file[1];
+//     if (!acc[key]) {
+//       acc[key] = [];
+//     }
+//     acc[key].push(value);
+//     return acc;
+//   }, {});
+
+//   Object.keys(filesMapped)
+//     .forEach(key => {
+//       const associatedFiles = filesMapped[key]
+//         .map(file => file.replace('.ts', ''))
+//         .map(file => `export * from './${file}';`)
+//         .join('\n');
+//       fs.writeFileSync(`${generatedZodSchemaPath}${key ? '/' + key + '/' : ''}/index.ts`, associatedFiles);
+//     });
 

@@ -11,8 +11,10 @@ generator client {
 }
 
 generator zod {
-  provider = "prisma-zod-generator"
-  output   = "../../../../../../libs/zod-types-from-prisma/src/lib"
+  provider            = "zod-prisma-types"
+  useMultipleFiles    = true
+  writeBarrelFiles    = true
+  output              = "../../../../../../libs/zod-types-from-prisma/src/lib"
 }
 
 model User {

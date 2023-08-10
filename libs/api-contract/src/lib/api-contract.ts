@@ -1,19 +1,9 @@
 import { initContract } from '@ts-rest/core';
-import { z } from 'zod';
-import { PostFindManySchema } from '@vet-assist/zod-types-from-prisma';
-
+import { PostFindManyArgsSchema } from '@vet-assist/zod-types-from-prisma/outputTypeSchemas';
+import { PostCreateInputSchema } from '@vet-assist/zod-types-from-prisma/inputTypeSchemas';
+import { PostSchema } from '@vet-assist/zod-types-from-prisma/modelSchema';
 
 const c = initContract();
-
-const PostSchema = z.object({
-  id: z.number(),
-  title: z.string(),
-  content: z.string().nullable(),
-  published: z.boolean().nullable(),
-  authorId: z.number().nullable()
-});
-
-// TODO EXPOSE ALL SCHEMAS FROM PISMA GENERATED TYPES
 
 export const contract = c.router({
   createPost: {
@@ -22,7 +12,7 @@ export const contract = c.router({
     responses: {
       201: PostSchema,
     },
-    body: PostFindManySchema,
+    body: PostCreateInputSchema,
     summary: 'Create a post',
   },
   getPost: {
@@ -40,7 +30,7 @@ export const contract = c.router({
     responses: {
       200: PostSchema.array(),
     },
-    body: PostSchema.partial().nullable(),
+    body: PostFindManyArgsSchema,
     summary: 'Get post by search criteria',
   },
 });

@@ -8,7 +8,7 @@ const c = initContract();
 export const contract = c.router({
   createPost: {
     method: 'POST',
-    path: '/posts',
+    path: '/posts/new',
     responses: {
       201: PostSchema,
     },

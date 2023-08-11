@@ -1,12 +1,12 @@
-import { TsRestHandler, tsRestHandler } from '@ts-rest/nest';
+import { TsRestHandler, nestControllerContract, tsRestHandler } from '@ts-rest/nest';
 import { Controller } from '@nestjs/common';
-import { contract as c } from '@vet-assist/api-contract';
+import { contract } from '@vet-assist/api-contract';
 import { PostStoreService } from '../../stores/post-store/post-store.service';
 
+const c = nestControllerContract(contract);
 @Controller()
-export class MyController {
-  constructor(private readonly postStoreService: PostStoreService,) {}
-    // https://ts-rest.com/docs/nest/
+export class PostController {
+  constructor(private readonly postStoreService: PostStoreService) {}
 
   @TsRestHandler(c)
   async handler() {
@@ -27,7 +27,6 @@ export class MyController {
       },
       getPosts: async () => {
         const posts = await this.postStoreService.posts({});
-
         return { status: 200, body: posts };
       },
     });

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "postinstall": "npm run generate:prisma-and-zod-schemas",
     "generate:prisma-and-zod-schemas": "node ./scripts/generate-prisma-and-zod-schemas.js"
   },
   "private": true,

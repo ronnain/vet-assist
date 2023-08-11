@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { initClient } from '@ts-rest/core';
 import { contract } from '@vet-assist/api-contract';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [NxWelcomeComponent, RouterModule, CommonModule],
   selector: 'vet-assist-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -14,26 +15,29 @@ import { contract } from '@vet-assist/api-contract';
 export class AppComponent {
   title = 'vet-assist';
 
-  async ngOnInit() {
-    const client = initClient(contract, {
-      baseUrl: 'http://localhost:3000',
-      baseHeaders: {},
-    });
+  readonly client = initClient(contract, {
+    baseUrl: 'http://localhost:3000/api',
+    baseHeaders: {},
+  });
 
-    const { body, status } = await client.createPost({
-      body: {
-        title: 'Post Title',
-        content: 'lol content',
-        published: false,
-      },
-    });
+  post$ = this.client.getPosts({body: {}});
 
-    if (status === 201) {
-      // body is Post
-      console.log(body);
-    } else {
-      // body is unknown
-      console.log(body);
-    }
-  }
+  // async ngOnInit() {
+
+  //   const { body, status } = await client.createPost({
+  //     body: {
+  //       title: 'Post Title',
+  //       content: 'lol content',
+  //       published: false,
+  //     },
+  //   });
+
+  //   if (status === 201) {
+  //     // body is Post
+  //     console.log(body);
+  //   } else {
+  //     // body is unknown
+  //     console.log(body);
+  //   }
+  // }
 }

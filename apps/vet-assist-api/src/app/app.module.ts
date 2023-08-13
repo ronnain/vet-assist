@@ -9,7 +9,7 @@ import { PostController } from './controllers/post/post.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController, PostController],
+  controllers: [PostController],
   providers: [AppService, PrismaService, UserStoreService, PostStoreService],
 })
 export class AppModule {}

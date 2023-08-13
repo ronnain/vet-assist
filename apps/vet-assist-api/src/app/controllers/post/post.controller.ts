@@ -1,9 +1,8 @@
-import { TsRestHandler, nestControllerContract, tsRestHandler } from '@ts-rest/nest';
+import { TsRestHandler, tsRestHandler } from '@ts-rest/nest';
 import { Controller } from '@nestjs/common';
-import { contract } from '@vet-assist/api-contract';
+import { contract as c } from '@vet-assist/api-contract';
 import { PostStoreService } from '../../stores/post-store/post-store.service';
 
-const c = nestControllerContract(contract);
 @Controller()
 export class PostController {
   constructor(private readonly postStoreService: PostStoreService) {}

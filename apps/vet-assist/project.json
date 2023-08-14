@@ -2,7 +2,7 @@
   "name": "vet-assist",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "vet-assist",
+  "prefix": "va",
   "sourceRoot": "apps/vet-assist/src",
   "tags": [],
   "targets": {

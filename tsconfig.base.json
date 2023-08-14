@@ -10,18 +10,36 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vet-assist/api-contract": ["libs/api-contract/src/index.ts"],
-      "@vet-assist/ts-rest-contract": ["libs/ts-rest-contract/src/index.ts"],
-      "@vet-assist/zod-types-from-prisma": ["libs/zod-types-from-prisma/src/lib/index.ts"],
-      "@vet-assist/zod-types-from-prisma/inputTypeSchemas": ["libs/zod-types-from-prisma/src/lib/inputTypeSchemas/index.ts"],
-      "@vet-assist/zod-types-from-prisma/modelSchema": ["libs/zod-types-from-prisma/src/lib/modelSchema/index.ts"],
-      "@vet-assist/zod-types-from-prisma/outputTypeSchemas": ["libs/zod-types-from-prisma/src/lib/outputTypeSchemas/index.ts"]
+      "@vet-assist/api-contract": [
+        "libs/api-contract/src/index.ts"
+      ],
+      "@vet-assist/ts-rest-contract": [
+        "libs/ts-rest-contract/src/index.ts"
+      ],
+      "@vet-assist/zod-types-from-prisma": [
+        "libs/zod-types-from-prisma/src/lib/index.ts"
+      ],
+      "@vet-assist/zod-types-from-prisma/inputTypeSchemas": [
+        "libs/zod-types-from-prisma/src/lib/inputTypeSchemas/index.ts"
+      ],
+      "@vet-assist/zod-types-from-prisma/modelSchema": [
+        "libs/zod-types-from-prisma/src/lib/modelSchema/index.ts"
+      ],
+      "@vet-assist/zod-types-from-prisma/outputTypeSchemas": [
+        "libs/zod-types-from-prisma/src/lib/outputTypeSchemas/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

@@ -17,18 +17,66 @@ generator zod {
   output              = "../../../../../../libs/zod-types-from-prisma/src/lib"
 }
 
-model User {
-  id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
-  posts Post[]
+// todo add constraints cascade delete
+
+model User { // todo ckreck on may if info are needed
+  id            Int       @id @default(autoincrement())
+  email         String    @unique
+  firstName     String
+  lastName      String
+  phone         String    @unique
+  role                  UserRolesEnum     @default(CUSTOMER)
+  authorMessages        Message[] @relation("author")
+  recipientsMessages    Message[] @relation("recipients")
+  firstTimeReadMessages        ReadAt[]  @relation("firstTimeReadMessage")
+  pets          Pet[]
 }
 
-model Post {
-  id        Int      @default(autoincrement()) @id
-  title     String
-  content   String?
-  published Boolean? @default(false)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+model Message {
+  id                    Int        @id @default(autoincrement())
+  storedAt              DateTime   @default(now())
+  title                 String
+  author                User       @relation("author", fields: [authorId], references: [id])
+  authorId              Int
+  recipient             Recipient // Used to improve developper reading
+  recipientCustomer     User?       @relation("recipients", fields: [recipientCustomerId], references: [id])
+  recipientCustomerId       Int?
+  recipientsFirstTimeRead    ReadAt[] // A message may be read by several staff users
+}
+
+model ReadAt {
+  id         Int        @id @default(autoincrement())
+  readAt     DateTime   @default(now())
+  user       User       @relation("firstTimeReadMessage", fields: [userId], references: [id])
+  userId     Int
+  message    Message    @relation(fields: [messageId], references: [id])
+  messageId  Int
+}
+
+enum Recipient {
+  STAFF
+  CUSTOMER
+}
+
+enum UserRolesEnum {
+  CUSTOMER
+  ADMIN
+  CUSTOMER_SUPPORT
+}
+
+model Pet {
+  id        Int      @id @default(autoincrement())
+  name      String
+  type      PetType
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum PetType {
+  CAT
+  DOG
+  FISH
+  BIRD
 }

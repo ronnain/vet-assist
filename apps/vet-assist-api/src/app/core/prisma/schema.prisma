@@ -20,22 +20,23 @@ generator zod {
 // todo add constraints cascade delete
 
 model User { // todo ckreck on may if info are needed
-  id            Int       @id @default(autoincrement())
-  email         String    @unique
-  firstName     String
-  lastName      String
-  phone         String    @unique
-  role                  UserRolesEnum     @default(CUSTOMER)
-  authorMessages        Message[] @relation("author")
-  recipientsMessages    Message[] @relation("recipients")
-  firstTimeReadMessages        ReadAt[]  @relation("firstTimeReadMessage")
-  pets          Pet[]
+  id                      Int               @id @default(autoincrement())
+  email                   String            @unique
+  firstName               String
+  lastName                String
+  phone                   String            @unique
+  role                    UserRoleEnum      @default(CUSTOMER)
+  authorMessages          Message[]         @relation("author")
+  recipientsMessages      Message[]         @relation("recipients")
+  firstTimeReadMessages   ReadAt[]          @relation("firstTimeReadMessage")
+  pets                    Pet[]
 }
 
 model Message {
   id                    Int        @id @default(autoincrement())
   storedAt              DateTime   @default(now())
-  title                 String
+  content               String
+  type                  MessageTypeEnum
   author                User       @relation("author", fields: [authorId], references: [id])
   authorId              Int
   recipient             Recipient // Used to improve developper reading
@@ -58,10 +59,18 @@ enum Recipient {
   CUSTOMER
 }
 
-enum UserRolesEnum {
+enum UserRoleEnum {
   CUSTOMER
   ADMIN
   CUSTOMER_SUPPORT
+}
+
+enum MessageTypeEnum {
+  TEXT
+  IMAGE_URL
+  VIDEO_URL
+  AUDIO_URL
+  DOCUMENT_URL
 }
 
 model Pet {

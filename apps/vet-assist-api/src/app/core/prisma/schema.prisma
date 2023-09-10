@@ -18,8 +18,9 @@ generator zod {
 }
 
 // todo add constraints cascade delete
+// TODO HANDLE PUSH NOTIFICATION RECEIVED BY USER
 
-model User { // todo ckreck on may if info are needed
+model User { // todo ckreck on may if more info are needed
   id                      Int               @id @default(autoincrement())
   email                   String            @unique
   firstName               String
@@ -27,9 +28,23 @@ model User { // todo ckreck on may if info are needed
   phone                   String            @unique
   role                    UserRoleEnum      @default(CUSTOMER)
   authorMessages          Message[]         @relation("author")
-  recipientsMessages      Message[]         @relation("recipients")
   firstTimeReadMessages   ReadAt[]          @relation("firstTimeReadMessage")
+  conversations           Conversation[]
   pets                    Pet[]
+}
+
+model Conversation {
+  id        Int        @id @default(autoincrement())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  type      ConversationType // REPOEN WHEN A NEW MESSAGE IS SENT FROM CUSTOMER
+  messages  Message[]
+  users     User[]
+}
+
+enum ConversationType {
+  CLOSED
+  OPEN
 }
 
 model Message {
@@ -39,10 +54,9 @@ model Message {
   type                  MessageTypeEnum
   author                User       @relation("author", fields: [authorId], references: [id])
   authorId              Int
-  recipient             Recipient // Used to improve developper reading
-  recipientCustomer     User?       @relation("recipients", fields: [recipientCustomerId], references: [id])
-  recipientCustomerId       Int?
   recipientsFirstTimeRead    ReadAt[] // A message may be read by several staff users
+  conversation          Conversation? @relation(fields: [conversationId], references: [id])
+  conversationId        Int?
 }
 
 model ReadAt {

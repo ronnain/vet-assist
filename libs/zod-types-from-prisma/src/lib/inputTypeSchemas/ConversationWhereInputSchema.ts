@@ -2,6 +2,8 @@ import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 import { IntFilterSchema } from './IntFilterSchema';
 import { DateTimeFilterSchema } from './DateTimeFilterSchema';
+import { EnumConversationTypeFilterSchema } from './EnumConversationTypeFilterSchema';
+import { ConversationTypeSchema } from './ConversationTypeSchema';
 import { MessageListRelationFilterSchema } from './MessageListRelationFilterSchema';
 import { UserListRelationFilterSchema } from './UserListRelationFilterSchema';
 
@@ -12,6 +14,7 @@ export const ConversationWhereInputSchema: z.ZodType<Prisma.ConversationWhereInp
   id: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   updatedAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
+  type: z.union([ z.lazy(() => EnumConversationTypeFilterSchema),z.lazy(() => ConversationTypeSchema) ]).optional(),
   messages: z.lazy(() => MessageListRelationFilterSchema).optional(),
   users: z.lazy(() => UserListRelationFilterSchema).optional()
 }).strict();

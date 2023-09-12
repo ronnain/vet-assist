@@ -13,6 +13,7 @@ export const ConversationSelectSchema: z.ZodType<Prisma.ConversationSelect> = z.
   id: z.boolean().optional(),
   createdAt: z.boolean().optional(),
   updatedAt: z.boolean().optional(),
+  type: z.boolean().optional(),
   messages: z.union([z.boolean(),z.lazy(() => MessageFindManyArgsSchema)]).optional(),
   users: z.union([z.boolean(),z.lazy(() => UserFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => ConversationCountOutputTypeArgsSchema)]).optional(),

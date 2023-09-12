@@ -8,6 +8,7 @@ export const ConversationOrderByWithRelationInputSchema: z.ZodType<Prisma.Conver
   id: z.lazy(() => SortOrderSchema).optional(),
   createdAt: z.lazy(() => SortOrderSchema).optional(),
   updatedAt: z.lazy(() => SortOrderSchema).optional(),
+  type: z.lazy(() => SortOrderSchema).optional(),
   messages: z.lazy(() => MessageOrderByRelationAggregateInputSchema).optional(),
   users: z.lazy(() => UserOrderByRelationAggregateInputSchema).optional()
 }).strict();

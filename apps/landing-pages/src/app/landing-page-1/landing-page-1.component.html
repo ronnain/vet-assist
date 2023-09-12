@@ -1,21 +1,62 @@
+<div class="linear-color-background">
+    <header class="sticky top-0 z-10 backdrop-blur-md">
+        <nav class="shadow">
+            <div class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
+              <div class="flex justify-between items-center">
+                <div>
+                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="#">Brand</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                  <button (click)="isBurgerMenuOpen = !isBurgerMenuOpen" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                      <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+              <div class="md:flex items-center" *ngIf="(deviceService.isMobile$ | async) === false || (deviceService.isMobile$ | async) && isBurgerMenuOpen ">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Home</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Shop</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Contact</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">About</a>
+                </div>
+
+                <div class="flex justify-center md:block">
+                  <a class="relative text-gray-700 hover:text-gray-600" href="#">
+                    <button hlmBtn>Télécharger</button>
+                </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <section>
+        <div class="wrapper container">
+            <div class="left">
+                <div class="title">
+                    <h1>Eliminez vos doutes en direct avec nos experts annimaliez dans votre poche</h1>
+                </div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <button hlmBtn>Télécharger</button>
+            </div>
+            <div class="right">
+                <div class="image">
+                    <img src="assets/landing-page-female/2.svg">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-<section class="linear-color-background">
-    <div class="wrapper container">
-        <div class="left">
-            <div class="title">
-                <h1>Eliminez vos doutes en direct avec nos experts annimaliez dans votre poche</h1>
-            </div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            <button class="cta"><span>Télécharger</span></button>
-        </div>
-        <div class="right">
-            <div class="image">
-                <img src="assets/landing-page-female/2.svg">
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+
+
 
 <section class="features-color-background">
     <div class="wrapper-features container">
@@ -71,6 +112,27 @@
 
 <section>
     <div class="container">
-        <lp-email/>
+        <div class="m-auto w-fit flex flex-col justify-center items-start">
+            <ng-container [ngSwitch]="step">
+                <ng-container *ngSwitchCase="1">
+                    <lp-email (emailSubmitted)="step = 2"/>
+                </ng-container>
+                <ng-container *ngSwitchCase="2">
+                    <div hlmAlert class="w-fit mb-8">
+                        <ng-icon hlmAlertIcon name="ionCheckmarkDoneCircle"></ng-icon>
+                        <!-- <hlm-icon hlmAlertIcon name="ionCheckmarkDoneCircle"/>  -->
+                        <h4 hlmAlertTitle>Email envoyé !</h4>
+                        <p hlmAlertDesc>
+                            Cela peut prendre quelques minutes avant que vous recevrez l'email.<br />
+                            Si vous ne le voyez pas, n'hésitez pas à regarder dans vos spam ou à réessayer.
+                        </p>
+                    </div>
+                    <lp-problem (problemSubmitted)="step = 3"/>
+                </ng-container>
+                <ng-container *ngSwitchCase="3">
+                    End
+                </ng-container>
+            </ng-container>
+        </div>
     </div>
 </section>

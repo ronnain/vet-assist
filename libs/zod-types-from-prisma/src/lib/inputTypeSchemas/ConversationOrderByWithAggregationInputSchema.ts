@@ -11,6 +11,7 @@ export const ConversationOrderByWithAggregationInputSchema: z.ZodType<Prisma.Con
   id: z.lazy(() => SortOrderSchema).optional(),
   createdAt: z.lazy(() => SortOrderSchema).optional(),
   updatedAt: z.lazy(() => SortOrderSchema).optional(),
+  type: z.lazy(() => SortOrderSchema).optional(),
   _count: z.lazy(() => ConversationCountOrderByAggregateInputSchema).optional(),
   _avg: z.lazy(() => ConversationAvgOrderByAggregateInputSchema).optional(),
   _max: z.lazy(() => ConversationMaxOrderByAggregateInputSchema).optional(),

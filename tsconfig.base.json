@@ -50,6 +50,9 @@
       ],
       "@spartan-ng/label-helm": [
         "libs/spartan-ui/label-helm/src/index.ts"
+      ],
+      "@spartan-ng/accordion-helm": [
+        "libs/spartan-ui/accordion-helm/src/index.ts"
       ]
     }
   },

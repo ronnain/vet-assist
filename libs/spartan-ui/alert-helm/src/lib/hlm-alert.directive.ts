@@ -9,6 +9,8 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: 'bg-background text-foreground',
+        primary: 'bg-primary text-primary-foreground border-primary/50',
+        "primary-outline": 'bg-primary-foreground text-primary border-primary/50',
         destructive:
           'text-destructive border-destructive/50 dark:border-destructive [&>[hlmAlertIcon]]:text-destructive text-destructive',
       },

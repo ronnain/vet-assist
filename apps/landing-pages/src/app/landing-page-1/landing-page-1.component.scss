@@ -71,6 +71,15 @@ $cta-color: #ffae00;
     }
 }
 
+.linear-color-background-inverted {
+    background: rgb(110,215,219);
+    background: linear-gradient(270deg, rgba(110,215,219,1) 0%, rgba(110,215,219,1) 60%, rgba(178,229,227,1) 78%, rgba(202,236,234,1) 100%);
+
+    @media screen and (max-width: 768px) {
+        background: linear-gradient(0deg, rgba(110,215,219,1) 0%, rgba(110,215,219,1) 60%, rgba(178,229,227,1) 78%, rgba(202,236,234,1) 100%);
+    }
+}
+
 
 .features-color-background {
     background-color: #5e8fa5;

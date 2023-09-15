@@ -16,15 +16,16 @@ import { HlmLabelDirective } from '@spartan-ng/label-helm';
     ReactiveFormsModule,
     HlmLabelDirective
   ],
-  template: ` <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  template: `
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
     <div
-      class="flex flex-col flex-nowrap md:flex-row items-end gap-3.5 m-auto w-[90vw]"
+      class="flex flex-col justify-start items-start w-full space-y-2"
     >
       <!-- ADD A TITLE LABEL -->
       <label hlmLabel class="font-bold">Quel est plus gros problème que vous rencontrez avec votre animal / vos animaux ?
         <textarea
           aria-label="Problem"
-          class="w-[inherit] max-w-2xl min-h-[80px]"
+          class="w-full max-w-2xl min-h-[80px]"
           hlmInput
           type="text"
           placeholder="Ecrivez votre problème."
@@ -33,7 +34,7 @@ import { HlmLabelDirective } from '@spartan-ng/label-helm';
         >
         </textarea>
       </label>
-      <button class="w-full md:w-auto" hlmBtn [disabled]="form.invalid">
+      <button class="w-fit md:w-auto" hlmBtn [disabled]="form.invalid" variant='accent'>
         Envoyer
       </button>
     </div>

@@ -27,8 +27,8 @@
                 </div>
 
                 <div class="flex justify-center md:block">
-                  <a class="relative text-gray-700 hover:text-gray-600" href="#">
-                    <button (click)="scrollToElement(download)" hlmBtn variant='accent' class="space-x-3"><span>Télécharger</span><ng-icon hlmAlertIcon name="ionDownloadOutline" [size]="'1.5rem'"/></button>
+                  <a class="relative text-gray-700 hover:text-gray-600">
+                    <lp-download-button (click)="scrollToElement(download)"/>
                 </a>
                 </div>
               </div>
@@ -38,12 +38,16 @@
 
     <section>
         <div class="wrapper container">
-            <div class="left">
+            <div class="left space-y-2">
                 <div class="title">
-                    <h1>Eliminez vos doutes en direct avec nos experts annimaliez dans votre poche</h1>
+                    <h1>Éliminez vos doutes en direct avec nos experts animaliers dans votre poche</h1>
                 </div>
                 <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                <button (click)="scrollToElement(download)" hlmBtn variant='accent' class="space-x-3"><span>Télécharger</span><ng-icon hlmAlertIcon name="ionDownloadOutline" [size]="'1.5rem'"/></button>
+                <lp-download-button (click)="scrollToElement(download)" [displayIcons]="false"/>
+                <div class="flex flex-row gap-2" (click)="scrollToElement(download)">
+                    <img  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.svg">
+                    <img class="rounded-md max-h-[40px]" src="assets/download-stores/app-store.svg">
+                </div>
             </div>
             <div class="right">
                 <div class="image">
@@ -52,11 +56,7 @@
             </div>
         </div>
     </section>
-
-
 </div>
-
-
 
 <section class="features-color-background">
     <div class="wrapper-features container">
@@ -279,10 +279,9 @@
                 <ng-container *ngSwitchCase="1">
                     <lp-email (emailSubmitted)="step = 2"/>
                 </ng-container>
-                <ng-container *ngSwitchCase="2">
+                <div *ngSwitchCase="2" @opacityAnimation>
                     <div hlmAlert class="w-fit mb-8" variant="primary">
                         <ng-icon hlmAlertIcon name="ionCheckmarkDoneCircle" class="!text-primary-foreground"></ng-icon>
-                        <!-- <hlm-icon hlmAlertIcon name="ionCheckmarkDoneCircle"/>  -->
                         <h4 hlmAlertTitle>Email envoyé !</h4>
                         <p hlmAlertDesc>
                             Cela peut prendre quelques minutes avant que vous recevrez l'email.<br />
@@ -290,17 +289,16 @@
                         </p>
                     </div>
                     <lp-problem (problemSubmitted)="step = 3"/>
-                </ng-container>
-                <ng-container *ngSwitchCase="3">
+                </div>
+                <div *ngSwitchCase="3" @opacityAnimation>
                     <div hlmAlert class="w-fit mb-8" variant="primary">
                         <ng-icon hlmAlertIcon name="ionCheckmarkDoneCircle" class="!text-primary-foreground"/>
-                        <!-- <hlm-icon hlmAlertIcon name="ionCheckmarkDoneCircle"/>  -->
                         <h4 hlmAlertTitle>Merci !</h4>
                         <p hlmAlertDesc>
                             L'équipe vous remercie et vous dit à très vite sur l'application<br />
                         </p>
                     </div>
-                </ng-container>
+                </div>
             </ng-container>
         </div>
     </div>

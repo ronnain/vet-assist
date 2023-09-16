@@ -9,7 +9,7 @@ const labelVariants = cva(
     variants: {
       variant: {
         default: '',
-        error: 'text-destructive',
+        error: 'text-destructive border-destructive',
       },
     },
     defaultVariants: {

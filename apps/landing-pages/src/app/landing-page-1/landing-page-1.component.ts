@@ -9,9 +9,11 @@ import {
   HlmAlertTitleDirective,
 } from '@spartan-ng/alert-helm';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { ionCheckmarkDoneCircle, ionDownloadOutline } from '@ng-icons/ionicons';
+import { ionCheckmarkDoneCircle } from '@ng-icons/ionicons';
 import { DeviceService } from '../services/device.service';
 import { HlmButtonDirective } from '@spartan-ng/button-helm';
+import { DownloadButtonComponent } from '../shared/components/downloadButton/download-button.component';
+import { opacityAnimation } from '../shared/animations/opacity.animation';
 
 @Component({
   selector: 'lp-landing-page-1',
@@ -25,11 +27,13 @@ import { HlmButtonDirective } from '@spartan-ng/button-helm';
     HlmAlertDescriptionDirective,
     HlmAlertIconDirective,
     HlmAlertTitleDirective,
-    HlmButtonDirective
+    HlmButtonDirective,
+    DownloadButtonComponent
   ],
-  providers: [provideIcons({ ionCheckmarkDoneCircle, ionDownloadOutline })],
+  providers: [provideIcons({ ionCheckmarkDoneCircle })],
   templateUrl: './landing-page-1.component.html',
-  styleUrls: ['./landing-page-1.component.scss']
+  styleUrls: ['./landing-page-1.component.scss'],
+  animations: [opacityAnimation]
 })
 export default class LandingPage1Component {
 

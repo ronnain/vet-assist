@@ -18,11 +18,26 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@spartan-ng/accordion-helm": [
+        "libs/spartan-ui/accordion-helm/src/index.ts"
+      ],
+      "@spartan-ng/alert-helm": [
+        "libs/spartan-ui/alert-helm/src/index.ts"
+      ],
       "@spartan-ng/button-helm": [
         "libs/spartan-ui/button-helm/src/index.ts"
       ],
+      "@spartan-ng/icon-helm": [
+        "libs/spartan-ui/icon-helm/src/index.ts"
+      ],
       "@spartan-ng/input-helm": [
         "libs/spartan-ui/input-helm/src/index.ts"
+      ],
+      "@spartan-ng/label-helm": [
+        "libs/spartan-ui/label-helm/src/index.ts"
+      ],
+      "@spartan-ng/progress-helm": [
+        "libs/spartan-ui/progress-helm/src/index.ts"
       ],
       "@vet-assist/api-contract": [
         "libs/api-contract/src/index.ts"
@@ -41,18 +56,6 @@
       ],
       "@vet-assist/zod-types-from-prisma/outputTypeSchemas": [
         "libs/zod-types-from-prisma/src/lib/outputTypeSchemas/index.ts"
-      ],
-      "@spartan-ng/alert-helm": [
-        "libs/spartan-ui/alert-helm/src/index.ts"
-      ],
-      "@spartan-ng/icon-helm": [
-        "libs/spartan-ui/icon-helm/src/index.ts"
-      ],
-      "@spartan-ng/label-helm": [
-        "libs/spartan-ui/label-helm/src/index.ts"
-      ],
-      "@spartan-ng/accordion-helm": [
-        "libs/spartan-ui/accordion-helm/src/index.ts"
       ]
     }
   },

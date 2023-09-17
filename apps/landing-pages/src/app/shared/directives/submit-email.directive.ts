@@ -17,7 +17,6 @@ export class SubmitEmailDirective {
 
   @Output() emailSubmitted = this.formGroupDirective.ngSubmit.pipe(
     map(() => this.formGroupDirective.form),
-    tap((data) => console.log(data)),
     map(form => form as EmailForm),
     filter(form => form.valid),
     map(form => form.value.email),

@@ -8,9 +8,7 @@ export class EmailStorageService {
     constructor(private httpClient: HttpClient) {
     }
     store(email: string) {
-        console.log('storeEmail', email);
         return of(true).pipe(delay(3000));
-        // return this.httpClient.post('https://landing-pages-6b6f7-default-rtdb.europe-west1.firebasedatabase.app/emails.json', {email: email});
     }
 
 }

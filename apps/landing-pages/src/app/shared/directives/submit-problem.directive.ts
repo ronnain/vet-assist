@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Output, inject } from '@angular/core';
 import { distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
-import { ProblemForm } from '../../problem/problem.component';
+import { ProblemForm } from '../components/problem/problem.component';
 import { ProblemStorageService } from '../services/problem-storage.service';
 
 @Directive({

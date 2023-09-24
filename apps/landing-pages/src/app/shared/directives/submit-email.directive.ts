@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, Output, inject } from '@angular/core';
 import { EmailStorageService } from '../services/email-storage.service';
-import { EmailForm } from '../../email/email.component';
+import { EmailForm } from '../components/email/email.component';
 import { distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
 

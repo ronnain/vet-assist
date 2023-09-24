@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { delay, of } from 'rxjs';
+import { ApiService } from '../../core/api.service';
 
 @Injectable({providedIn: 'root'})
 export class EmailStorageService {
 
-    constructor(private httpClient: HttpClient) {
-    }
+    private readonly apiService = inject(ApiService);
+
     store(email: string) {
+        // return this.apiService.client.prospect.createProspect({body: {email}});
         return of(true).pipe(delay(3000));
     }
 

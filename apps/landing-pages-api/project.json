@@ -1,0 +1,58 @@
+{
+  "name": "landing-pages-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/landing-pages-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/landing-pages-api",
+        "main": "apps/landing-pages-api/src/main.ts",
+        "tsConfig": "apps/landing-pages-api/tsconfig.app.json",
+        "assets": [
+          "apps/landing-pages-api/src/assets"
+        ],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/landing-pages-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "landing-pages-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "landing-pages-api:build:development"
+        },
+        "production": {
+          "buildTarget": "landing-pages-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/landing-pages-api/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

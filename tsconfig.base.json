@@ -42,6 +42,9 @@
       "@vet-assist/api-contract": [
         "libs/api-contract/src/index.ts"
       ],
+      "@vet-assist/landing-pages-api-contract": [
+        "libs/landing-pages-api-contract/src/index.ts"
+      ],
       "@vet-assist/ts-rest-contract": [
         "libs/ts-rest-contract/src/index.ts"
       ],
@@ -56,6 +59,15 @@
       ],
       "@vet-assist/zod-types-from-prisma/outputTypeSchemas": [
         "libs/zod-types-from-prisma/src/lib/outputTypeSchemas/index.ts"
+      ],
+      "@prospection-db/types/zod/inputTypeSchemas": [
+        "libs/prospection-db-types/zod/inputTypeSchemas/index.ts"
+      ],
+      "@prospection-db/types/zod/modelSchema": [
+        "libs/prospection-db-types/zod/modelSchema/index.ts"
+      ],
+      "@prospection-db/types/zod/outputTypeSchemas": [
+        "libs/prospection-db-types/zod/outputTypeSchemas/index.ts"
       ]
     }
   },

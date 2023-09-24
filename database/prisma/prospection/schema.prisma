@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL_LANDING_PAGES")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider            = "zod-prisma-types"
+  useMultipleFiles    = true
+  writeBarrelFiles    = true
+  output              = "../../../libs/prospection-db-types/zod"
+}
+
+model Prospect {
+  id                      Int               @id @default(autoincrement())
+  createdAt               DateTime          @default(now())
+  email                   String            @unique
+  offerName               String
+  offerDescription        String
+  rgpd                    Boolean           @default(false)
+  unsubscribe             Boolean           @default(false)
+  unsubscribeLink         String            @unique
+  problem                 Problem?
+}
+
+model Problem {
+  id                      Int               @id @default(autoincrement())
+  createdAt               DateTime          @default(now())
+  description             String
+  prospect                Prospect?         @relation(fields: [prospectId], references: [id])
+  prospectId              Int?              @unique
+}

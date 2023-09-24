@@ -6,10 +6,10 @@ import { HlmButtonDirective } from '@spartan-ng/button-helm';
 import { HlmLabelDirective } from '@spartan-ng/label-helm';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { ionDownloadOutline } from '@ng-icons/ionicons';
-import { SubmitEmailDirective } from '../shared/directives/submit-email.directive';
-import { DownloadButtonComponent } from '../shared/components/downloadButton/download-button.component';
-import { IsFormSubmittedDirective } from '../shared/directives/is-form-submitted.directive';
-import { ProgressIndeterminateComponent } from '../shared/components/progress-indeterminate/progress-indeterminate.component';
+import { SubmitEmailDirective } from '../../directives/submit-email.directive';
+import { DownloadButtonComponent } from '../downloadButton/download-button.component';
+import { IsFormSubmittedDirective } from '../../directives/is-form-submitted.directive';
+import { ProgressIndeterminateComponent } from '../progress-indeterminate/progress-indeterminate.component';
 
 
 @Component({

@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npm run generate:prisma-and-zod-schemas",
+    "db:prisma-update": "npx prisma migrate dev --name init --schema ./database/prisma/schema.prisma",
     "generate:prisma-and-zod-schemas": "node ./scripts/generate-prisma-and-zod-schemas.js"
   },
   "private": true,

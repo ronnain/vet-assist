@@ -4,9 +4,9 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { HlmButtonDirective } from '@spartan-ng/button-helm';
 import { HlmInputDirective } from '@spartan-ng/input-helm';
 import { HlmLabelDirective } from '@spartan-ng/label-helm';
-import { IsFormSubmittedDirective } from '../shared/directives/is-form-submitted.directive';
-import { SubmitProblemDirective } from '../shared/directives/submit-problem.directive';
-import { ProgressIndeterminateComponent } from '../shared/components/progress-indeterminate/progress-indeterminate.component';
+import { IsFormSubmittedDirective } from '../../directives/is-form-submitted.directive';
+import { SubmitProblemDirective } from '../../directives/submit-problem.directive';
+import { ProgressIndeterminateComponent } from '../progress-indeterminate/progress-indeterminate.component';
 
 @Component({
   selector: 'lp-problem',

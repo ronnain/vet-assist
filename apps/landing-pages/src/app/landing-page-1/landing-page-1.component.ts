@@ -1,7 +1,7 @@
 import { Component, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmailComponent } from '../email/email.component';
-import { ProblemComponent } from '../problem/problem.component';
+import { EmailComponent } from '../shared/components/email/email.component';
+import { ProblemComponent } from '../shared/components/problem/problem.component';
 import {
   HlmAlertDescriptionDirective,
   HlmAlertDirective,

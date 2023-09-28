@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npm run generate:prisma-and-zod-schemas",
-    "db:prisma-update": "npx prisma migrate dev --name init --schema ./database/prisma/schema.prisma",
+    "db:prisma-update": "npx prisma migrate dev --name init --schema ./database/prisma/prospection/schema.prisma",
     "generate:prisma-and-zod-schemas": "node ./scripts/generate-prisma-and-zod-schemas.js"
   },
   "private": true,
@@ -81,6 +81,7 @@
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
+    "fastify": "^4.23.2",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",

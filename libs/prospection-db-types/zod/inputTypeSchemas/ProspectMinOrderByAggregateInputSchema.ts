@@ -10,7 +10,8 @@ export const ProspectMinOrderByAggregateInputSchema: z.ZodType<Prisma.ProspectMi
   offerDescription: z.lazy(() => SortOrderSchema).optional(),
   rgpd: z.lazy(() => SortOrderSchema).optional(),
   unsubscribe: z.lazy(() => SortOrderSchema).optional(),
-  unsubscribeLink: z.lazy(() => SortOrderSchema).optional()
+  unsubscribeLink: z.lazy(() => SortOrderSchema).optional(),
+  problem: z.lazy(() => SortOrderSchema).optional()
 }).strict();
 
 export default ProspectMinOrderByAggregateInputSchema;

@@ -1,5 +1,5 @@
 import { initContract } from '@ts-rest/core';
-import { ConversationFindManyArgsSchema, ConversationSchema, MessageSchema } from '@vet-assist/zod-types-from-prisma';
+// import { ConversationFindManyArgsSchema, ConversationSchema, MessageSchema } from '@vet-assist/zod-types-from-prisma';
 
 const c = initContract();
 

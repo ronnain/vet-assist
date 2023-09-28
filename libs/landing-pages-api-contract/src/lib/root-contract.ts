@@ -5,7 +5,5 @@ const c = initContract();
 
 export const RootContract = c.router({
         prospect: ProspectContract
-    },
-    {
-        pathPrefix: '/lp/api/v1/',
-    });
+    }
+    );

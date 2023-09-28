@@ -9,7 +9,8 @@ export const ProspectCreateManyInputSchema: z.ZodType<Prisma.ProspectCreateManyI
   offerDescription: z.string(),
   rgpd: z.boolean().optional(),
   unsubscribe: z.boolean().optional(),
-  unsubscribeLink: z.string()
+  unsubscribeLink: z.string(),
+  problem: z.string().optional().nullable()
 }).strict();
 
 export default ProspectCreateManyInputSchema;

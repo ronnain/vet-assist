@@ -1,6 +1,5 @@
 import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
-import { ProblemUncheckedCreateNestedOneWithoutProspectInputSchema } from './ProblemUncheckedCreateNestedOneWithoutProspectInputSchema';
 
 export const ProspectUncheckedCreateInputSchema: z.ZodType<Prisma.ProspectUncheckedCreateInput> = z.object({
   id: z.number().int().optional(),
@@ -11,7 +10,7 @@ export const ProspectUncheckedCreateInputSchema: z.ZodType<Prisma.ProspectUnchec
   rgpd: z.boolean().optional(),
   unsubscribe: z.boolean().optional(),
   unsubscribeLink: z.string(),
-  problem: z.lazy(() => ProblemUncheckedCreateNestedOneWithoutProspectInputSchema).optional()
+  problem: z.string().optional().nullable()
 }).strict();
 
 export default ProspectUncheckedCreateInputSchema;

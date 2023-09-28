@@ -4,8 +4,7 @@ import { IntFilterSchema } from './IntFilterSchema';
 import { DateTimeFilterSchema } from './DateTimeFilterSchema';
 import { StringFilterSchema } from './StringFilterSchema';
 import { BoolFilterSchema } from './BoolFilterSchema';
-import { ProblemNullableRelationFilterSchema } from './ProblemNullableRelationFilterSchema';
-import { ProblemWhereInputSchema } from './ProblemWhereInputSchema';
+import { StringNullableFilterSchema } from './StringNullableFilterSchema';
 
 export const ProspectWhereInputSchema: z.ZodType<Prisma.ProspectWhereInput> = z.object({
   AND: z.union([ z.lazy(() => ProspectWhereInputSchema),z.lazy(() => ProspectWhereInputSchema).array() ]).optional(),
@@ -19,7 +18,7 @@ export const ProspectWhereInputSchema: z.ZodType<Prisma.ProspectWhereInput> = z.
   rgpd: z.union([ z.lazy(() => BoolFilterSchema),z.boolean() ]).optional(),
   unsubscribe: z.union([ z.lazy(() => BoolFilterSchema),z.boolean() ]).optional(),
   unsubscribeLink: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
-  problem: z.union([ z.lazy(() => ProblemNullableRelationFilterSchema),z.lazy(() => ProblemWhereInputSchema) ]).optional().nullable(),
+  problem: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
 
 export default ProspectWhereInputSchema;

@@ -1,8 +1,10 @@
 import { initContract } from '@ts-rest/core';
 import { ProspectSchema } from '@prospection-db/types/zod/modelSchema';
 import { ProspectFindManyArgsSchema } from '@prospection-db/types/zod/outputTypeSchemas';
+import { ProspectUpdateInputSchema } from '@prospection-db/types/zod/inputTypeSchemas';
 
 const c = initContract();
+
 
 export const ProspectContract = c.router({
   prospect: {
@@ -46,6 +48,29 @@ export const ProspectContract = c.router({
     body: ProspectSchema,
     summary: 'Update a prospect',
   },
+  patchProspect: {
+    method: 'PATCH',
+    path: `/:prospectId`,
+    responses: {
+      200: ProspectSchema,
+      404: null
+    },
+    body: ProspectUpdateInputSchema,
+    summary: 'Patch a prospect',
+  },
+  storeEmailProspect: {
+    method: 'POST',
+    path: `/email`,
+    responses: {
+      200: ProspectSchema
+    },
+    body: ProspectSchema.pick({
+      email: true,
+      offerName: true,
+      offerDescription: true,
+     }),
+    summary: 'Store an email prospect',
+  },
   // Delete a prospect
   // deleteProspect: {
   //   method: 'DELETE',
@@ -58,6 +83,6 @@ export const ProspectContract = c.router({
   // },
 },
  {
-  pathPrefix: 'prospects'
+  pathPrefix: '/prospects'
  }
  );

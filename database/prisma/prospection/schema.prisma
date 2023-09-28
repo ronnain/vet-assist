@@ -26,13 +26,5 @@ model Prospect {
   rgpd                    Boolean           @default(false)
   unsubscribe             Boolean           @default(false)
   unsubscribeLink         String            @unique
-  problem                 Problem?
-}
-
-model Problem {
-  id                      Int               @id @default(autoincrement())
-  createdAt               DateTime          @default(now())
-  description             String
-  prospect                Prospect?         @relation(fields: [prospectId], references: [id])
-  prospectId              Int?              @unique
+  problem                 String?
 }

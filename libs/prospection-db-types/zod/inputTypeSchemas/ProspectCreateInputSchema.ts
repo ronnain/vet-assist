@@ -1,6 +1,5 @@
 import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
-import { ProblemCreateNestedOneWithoutProspectInputSchema } from './ProblemCreateNestedOneWithoutProspectInputSchema';
 
 export const ProspectCreateInputSchema: z.ZodType<Prisma.ProspectCreateInput> = z.object({
   createdAt: z.coerce.date().optional(),
@@ -10,7 +9,7 @@ export const ProspectCreateInputSchema: z.ZodType<Prisma.ProspectCreateInput> = 
   rgpd: z.boolean().optional(),
   unsubscribe: z.boolean().optional(),
   unsubscribeLink: z.string(),
-  problem: z.lazy(() => ProblemCreateNestedOneWithoutProspectInputSchema).optional()
+  problem: z.string().optional().nullable()
 }).strict();
 
 export default ProspectCreateInputSchema;

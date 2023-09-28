@@ -1,4 +1,4 @@
-import { Directive, Output, inject } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
 
 @Directive({

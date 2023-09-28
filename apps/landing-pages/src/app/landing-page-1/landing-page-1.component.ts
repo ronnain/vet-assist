@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailComponent } from '../shared/components/email/email.component';
 import { ProblemComponent } from '../shared/components/problem/problem.component';
@@ -10,10 +10,11 @@ import {
 } from '@spartan-ng/alert-helm';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { ionCheckmarkDoneCircle } from '@ng-icons/ionicons';
-import { DeviceService } from '../services/device.service';
+import { DeviceService } from '../shared/services/device.service';
 import { HlmButtonDirective } from '@spartan-ng/button-helm';
 import { DownloadButtonComponent } from '../shared/components/downloadButton/download-button.component';
 import { opacityAnimation } from '../shared/animations/opacity.animation';
+import { provideOfferToken } from '../shared/token/offer.token';
 
 @Component({
   selector: 'lp-landing-page-1',
@@ -30,7 +31,13 @@ import { opacityAnimation } from '../shared/animations/opacity.animation';
     HlmButtonDirective,
     DownloadButtonComponent
   ],
-  providers: [provideIcons({ ionCheckmarkDoneCircle })],
+  providers: [
+    provideIcons({ ionCheckmarkDoneCircle }),
+    provideOfferToken({
+      offerName: 'offer 1',
+      offerDescription: 'offer description 1'
+    })
+  ],
   templateUrl: './landing-page-1.component.html',
   styleUrls: ['./landing-page-1.component.scss'],
   animations: [opacityAnimation]
@@ -46,5 +53,4 @@ export default class LandingPage1Component {
   scrollToElement($element: Element): void {
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
-
 }

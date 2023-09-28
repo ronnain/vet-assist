@@ -4,6 +4,7 @@ import { IntWithAggregatesFilterSchema } from './IntWithAggregatesFilterSchema';
 import { DateTimeWithAggregatesFilterSchema } from './DateTimeWithAggregatesFilterSchema';
 import { StringWithAggregatesFilterSchema } from './StringWithAggregatesFilterSchema';
 import { BoolWithAggregatesFilterSchema } from './BoolWithAggregatesFilterSchema';
+import { StringNullableWithAggregatesFilterSchema } from './StringNullableWithAggregatesFilterSchema';
 
 export const ProspectScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.ProspectScalarWhereWithAggregatesInput> = z.object({
   AND: z.union([ z.lazy(() => ProspectScalarWhereWithAggregatesInputSchema),z.lazy(() => ProspectScalarWhereWithAggregatesInputSchema).array() ]).optional(),
@@ -17,6 +18,7 @@ export const ProspectScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Pros
   rgpd: z.union([ z.lazy(() => BoolWithAggregatesFilterSchema),z.boolean() ]).optional(),
   unsubscribe: z.union([ z.lazy(() => BoolWithAggregatesFilterSchema),z.boolean() ]).optional(),
   unsubscribeLink: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
+  problem: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
 
 export default ProspectScalarWhereWithAggregatesInputSchema;

@@ -27,7 +27,6 @@ export class ProspectController {
         return { status: 200, body: prospect };
       },
       prospects: async ({ query }) => {
-        console.log('prospects');
         const prospects = await this.prospectStoreService.prospects(query);
         return { status: 200, body: prospects };
       },
@@ -40,6 +39,20 @@ export class ProspectController {
         const prospect = await this.prospectStoreService.updateProspect({where: {id: prospectId}, data: body});
         return { status: 200, body: prospect };
       },
+      storeEmailProspect: async ({ body }) => {
+        const prospect = await this.prospectStoreService.storeEmailProspect({
+          ...body
+        });
+        return { status: 200, body: prospect };
+      },
+      patchProspect: async ({ params, body }) => {
+        const prospectId = params.prospectId ? parseInt(params.prospectId) : undefined;
+        const prospect = await this.prospectStoreService.patchProspect({
+          where: {id: prospectId},
+          data: body
+        });
+        return { status: 200, body: prospect };
+      }
     }
     );
   }

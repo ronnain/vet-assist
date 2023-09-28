@@ -6,7 +6,7 @@ import { RootContract } from '@vet-assist/landing-pages-api-contract';
 export class ApiService {
 
     readonly client = initClient(RootContract, {
-        baseUrl: '',
+        baseUrl: 'http://localhost:3001',
         baseHeaders: {},
     });
 }

@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
 import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
 import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema';
-import { ProblemUpdateOneWithoutProspectNestedInputSchema } from './ProblemUpdateOneWithoutProspectNestedInputSchema';
+import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
 
 export const ProspectUpdateInputSchema: z.ZodType<Prisma.ProspectUpdateInput> = z.object({
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
@@ -13,7 +13,7 @@ export const ProspectUpdateInputSchema: z.ZodType<Prisma.ProspectUpdateInput> = 
   rgpd: z.union([ z.boolean(),z.lazy(() => BoolFieldUpdateOperationsInputSchema) ]).optional(),
   unsubscribe: z.union([ z.boolean(),z.lazy(() => BoolFieldUpdateOperationsInputSchema) ]).optional(),
   unsubscribeLink: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
-  problem: z.lazy(() => ProblemUpdateOneWithoutProspectNestedInputSchema).optional()
+  problem: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
 }).strict();
 
 export default ProspectUpdateInputSchema;

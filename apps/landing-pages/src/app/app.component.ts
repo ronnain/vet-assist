@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ApiService } from './core/api.service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 
 @Component({
@@ -13,7 +12,4 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
 export class AppComponent {
   title = 'landing-pages';
 
-  private readonly apiService = inject(ApiService);
-
-  prospects = this.apiService.client.prospect.prospects();
 }

@@ -13,6 +13,7 @@ export const ProspectSchema = z.object({
   rgpd: z.boolean(),
   unsubscribe: z.boolean(),
   unsubscribeLink: z.string(),
+  problem: z.string().nullable(),
 })
 
 export type Prospect = z.infer<typeof ProspectSchema>

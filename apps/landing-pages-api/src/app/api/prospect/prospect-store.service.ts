@@ -20,6 +20,14 @@ export class ProspectStoreService {
         });
     }
 
+    async storeEmailProspect(data: Pick<Prisma.ProspectCreateInput, 'email' | 'offerName' | 'offerDescription'>) {
+        return this.prisma.prospect.create({ data: {
+            ...data,
+            unsubscribe: false,
+            unsubscribeLink: crypto.randomUUID()
+        }});
+    }
+
     async updateProspect(params: {
         where: Prisma.ProspectWhereUniqueInput;
         data: Prisma.ProspectUpdateInput;
@@ -33,6 +41,17 @@ export class ProspectStoreService {
 
     async deleteProspect(where: Prisma.ProspectWhereUniqueInput) {
         return this.prisma.prospect.delete({
+            where,
+        });
+    }
+
+    async patchProspect(params: {
+        where: Prisma.ProspectWhereUniqueInput;
+        data: Prisma.ProspectUpdateInput;
+    }) {
+        const { data, where } = params;
+        return this.prisma.prospect.update({
+            data,
             where,
         });
     }

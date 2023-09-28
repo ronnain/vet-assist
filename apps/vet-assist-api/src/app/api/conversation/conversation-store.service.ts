@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Conversation, Message, Prisma } from '@prisma/client';
 import { PrismaService } from '../../core/services/prisma/prisma.service';
-import { ConversationFindManyArgsSchema } from '@vet-assist/zod-types-from-prisma';
+// import { ConversationFindManyArgsSchema } from '@vet-assist/zod-types-from-prisma';
 
 @Injectable()
 export class ConversationStoreService {

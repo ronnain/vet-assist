@@ -42,7 +42,7 @@
                 <div class="title">
                     <h1>Éliminez vos doutes en direct avec nos experts animaliers dans votre poche</h1>
                 </div>
-                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <div class="description">L'application qui fait de vous un maître confiant. Ne laissez plus le doute vous envahir.</div>
                 <lp-download-button (click)="scrollToElement(download)" [displayIcons]="false"/>
                 <div class="flex flex-row gap-2" (click)="scrollToElement(download)">
                     <img  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.svg">
@@ -60,26 +60,26 @@
 
 <section class="features-color-background">
     <div class="wrapper-features container">
-        <div class="column">
+        <div class="column w-1/3">
             <div class="feature-icon">
                 <img src="assets/icons/1.svg">
             </div>
-            <h3>Feature 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <h3>Posez toutes vos questions !</h3>
+            <p>Un accompagnement personnalisé pour répondre aux besoins de vos animaux de compagnie tout au long de leur vie.</p>
         </div>
-        <div class="column">
+        <div class="column w-1/3">
             <div class="feature-icon">
                 <img src="assets/icons/2.svg">
             </div>
-            <h3>Feature 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <h3>Au plus près de vous 24h/24, 7j/7</h3>
+            <p>Obtenez une réponse instantanée via notre chat dédié, disponible sur mobile, tablette et ordinateur.</p>
         </div>
-        <div class="column">
+        <div class="column w-1/3">
             <div class="feature-icon">
                 <img src="assets/icons/3.svg">
             </div>
-            <h3>Feature 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <h3>Tous vos compagnons sont les bienvenus</h3>
+            <p>Avec ou sans pattes, à poils, à plumes ou à écailles.</p>
         </div>
     </div>
 </section>
@@ -95,7 +95,7 @@
                     FAQ
                 </h2>
                 <p class="text-neutral-500 text-xl mt-3">
-                    Frequenty asked questions
+                    Questions les plus posées
                 </p>
             </div>
             <div class="grid divide-y divide-slate-500 max-w-xl mx-auto mt-8">
@@ -246,7 +246,8 @@
     </div>
 </section>
 
-<section>
+<section style="background-color: aliceblue;">
+    <!-- TODO FAKE AVIS -->
     <div class="wrapper-features container">
         <div class="column">
             <div class="feature-icon">
@@ -285,7 +286,7 @@
                         <h4 hlmAlertTitle>Email envoyé !</h4>
                         <p hlmAlertDesc>
                             Cela peut prendre quelques minutes avant que vous recevrez l'email.<br />
-                            Si vous ne le voyez pas, n'hésitez pas à regarder dans vos spam ou à réessayer.
+                            Si vous ne le voyez pas, n'hésitez pas à regarder dans vos <strong>spams</strong> ou à réessayer.
                         </p>
                     </div>
                     <lp-problem (problemSubmitted)="step = 3"/>

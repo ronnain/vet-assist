@@ -250,13 +250,14 @@
     <div>
         <h2 class="font-bold text-5xl pt-8 text-center text-accent">Ce que ces maîtres disent de nous :</h2>
     </div>
-    <!-- TODO FAKE AVIS  & img description-->
+    <!-- TODO FAKE AVIS  & img description + étoiles ?-->
     <div class="wrapper-features">
         <div class="column">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Marion-avis.jpg">
             </div>
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
         <div class="column">
@@ -264,6 +265,7 @@
                 <img class="rounded-full" src="assets/avis/Karim-avis.jpg">
             </div>
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
         <div class="column">
@@ -271,6 +273,7 @@
                 <img class="rounded-full" src="assets/avis/Julien-avis.jpg">
             </div>
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
         <div class="column">
@@ -278,6 +281,7 @@
                 <img class="rounded-full" src="assets/avis/Stephanie-avis.jpg">
             </div>
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
         <div class="column">
@@ -285,6 +289,7 @@
                 <img class="rounded-full" src="assets/avis/Elsa-avis.jpg">
             </div>
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
     </div>
@@ -321,3 +326,21 @@
         </div>
     </div>
 </section>
+
+
+<ng-template #FiveStars>
+    <div class="flex justify-center items-center">
+        <div class="flex items-center mt-2 mb-4">
+          <svg *ngFor="let star of [1,2,3,4,5]" class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+        </div>
+      </div>
+</ng-template>
+
+<ng-template #FourStars>
+    <div class="flex justify-center items-center">
+        <div class="flex items-center mt-2 mb-4">
+          <svg *ngFor="let star of [1,2,3,4]" class="mx-1 w-4 h-4 fill-current text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+          <svg class="mx-1 w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+        </div>
+      </div>
+</ng-template>

@@ -18,6 +18,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@prospection-db/types/zod/inputTypeSchemas": [
+        "libs/prospection-db-types/zod/inputTypeSchemas/index.ts"
+      ],
+      "@prospection-db/types/zod/modelSchema": [
+        "libs/prospection-db-types/zod/modelSchema/index.ts"
+      ],
+      "@prospection-db/types/zod/outputTypeSchemas": [
+        "libs/prospection-db-types/zod/outputTypeSchemas/index.ts"
+      ],
       "@spartan-ng/accordion-helm": [
         "libs/spartan-ui/accordion-helm/src/index.ts"
       ],
@@ -59,15 +68,6 @@
       ],
       "@vet-assist/zod-types-from-prisma/outputTypeSchemas": [
         "libs/zod-types-from-prisma/src/lib/outputTypeSchemas/index.ts"
-      ],
-      "@prospection-db/types/zod/inputTypeSchemas": [
-        "libs/prospection-db-types/zod/inputTypeSchemas/index.ts"
-      ],
-      "@prospection-db/types/zod/modelSchema": [
-        "libs/prospection-db-types/zod/modelSchema/index.ts"
-      ],
-      "@prospection-db/types/zod/outputTypeSchemas": [
-        "libs/prospection-db-types/zod/outputTypeSchemas/index.ts"
       ]
     }
   },

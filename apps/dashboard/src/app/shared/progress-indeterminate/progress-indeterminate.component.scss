@@ -1,0 +1,13 @@
+@keyframes indeterminate {
+  0% {
+      transform: translate(-100%) scaleX(.5)
+  }
+
+  to {
+      transform: translate(100%) scaleX(.5)
+  }
+}
+
+.animate-indeterminate {
+    animation: indeterminate 4s infinite ease-in-out;
+}

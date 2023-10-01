@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL_LANDING_PAGES")
+  url      = env("DATABASE_URL_PROSPECT")
 }
 
 generator client {

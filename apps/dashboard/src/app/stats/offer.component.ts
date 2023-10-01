@@ -40,6 +40,7 @@ import { NbProspectByOfferPipe } from './nb-prospect-by-offer.pipe';
                 <th scope="col" class=" px-6 py-4">Email</th>
                 <th scope="col" class=" px-6 py-4">Offer</th>
                 <th scope="col" class=" px-6 py-4">Créé à</th>
+                <th scope="col" class=" px-6 py-4">Problème</th>
               </tr>
             </thead>
             <tbody>
@@ -51,6 +52,7 @@ import { NbProspectByOfferPipe } from './nb-prospect-by-offer.pipe';
                 <td class="whitespace-nowrap  px-6 py-4">{{prospect.email}}</td>
                 <td class="whitespace-nowrap  px-6 py-4">{{prospect.offerName}}</td>
                 <td class="whitespace-nowrap  px-6 py-4">{{prospect.createdAt}}</td>
+                <td class="whitespace-nowrap  px-6 py-4">{{prospect.problem ?? '-'}}</td>
               </tr>
             </tbody>
           </table>

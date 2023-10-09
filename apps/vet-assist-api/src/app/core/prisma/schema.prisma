@@ -33,6 +33,18 @@ model User { // todo ckreck on may if more info are needed
   pets                    Pet[]
 }
 
+model Message {
+  id                    Int        @id @default(autoincrement())
+  storedAt              DateTime   @default(now())
+  content               String
+  type                  MessageTypeEnum
+  author                User       @relation("author", fields: [authorId], references: [id])
+  authorId              Int
+  recipientsFirstTimeRead    ReadAt[] // A message may be read by several staff users
+  conversation          Conversation? @relation(fields: [conversationId], references: [id])
+  conversationId        Int?
+}
+
 model Conversation {
   id        Int        @id @default(autoincrement())
   createdAt DateTime   @default(now())
@@ -45,18 +57,6 @@ model Conversation {
 enum ConversationType {
   CLOSED
   OPEN
-}
-
-model Message {
-  id                    Int        @id @default(autoincrement())
-  storedAt              DateTime   @default(now())
-  content               String
-  type                  MessageTypeEnum
-  author                User       @relation("author", fields: [authorId], references: [id])
-  authorId              Int
-  recipientsFirstTimeRead    ReadAt[] // A message may be read by several staff users
-  conversation          Conversation? @relation(fields: [conversationId], references: [id])
-  conversationId        Int?
 }
 
 model ReadAt {
@@ -91,6 +91,8 @@ model Pet {
   id        Int      @id @default(autoincrement())
   name      String
   type      PetType
+  specificType String  /// Precision about the race...
+  gender  PetGender
   owner     User     @relation(fields: [ownerId], references: [id])
   ownerId   Int
   createdAt DateTime @default(now())
@@ -100,6 +102,19 @@ model Pet {
 enum PetType {
   CAT
   DOG
+  RODENT
+  TURTLE
+  TORTOISE
+  SNAKE
+  LIZARD
   FISH
   BIRD
+  INSECT
+}
+
+enum PetGender {
+  MALE
+  FEMALE
+  UNKNOWN
+  OTHER
 }

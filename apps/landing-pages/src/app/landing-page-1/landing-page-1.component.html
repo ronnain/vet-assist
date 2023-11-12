@@ -20,10 +20,11 @@
               <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
               <div class="md:flex items-center" *ngIf="(deviceService.isMobile$ | async) === false || (deviceService.isMobile$ | async) && isBurgerMenuOpen ">
                 <div class="flex flex-col md:flex-row md:mx-6">
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Home</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Shop</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">Contact</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="#">About</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(home);">Home</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(price)">Tarif</a>
                 </div>
 
                 <div class="flex justify-center md:block">
@@ -39,7 +40,7 @@
     <section>
         <div class="wrapper container">
             <div class="left space-y-2">
-                <div class="title">
+                <div class="title" #home>
                     <h1>L’application qu’il vous faut en tant que maître d’animaux !</h1>
                 </div>
                 <div class="description">Des réponses professionnelles à toutes les questions que vous pouvez vous poser au sujet de vos compagnons </div>
@@ -58,7 +59,7 @@
     </section>
 </div>
 
-<section class="features-color-background">
+<section class="features-color-background" #features>
     <div class="wrapper-features container">
         <div class="column md:flex-grow md:flex-shrink md:w-0">
             <div class="feature-icon">
@@ -84,7 +85,7 @@
     </div>
 </section>
 
-<section class="linear-color-background-inverted min-h-screen">
+<section class="linear-color-background-inverted min-h-screen" #faq>
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
         <img class="w-full max-w-[50%]" src="assets/landing-page-female/girls.png">
@@ -175,7 +176,7 @@ Notre équipe de professionnels vous répondra instantanément.
     </div>
 </section>
 
-<section style="background-color: aliceblue;" class="min-h-[50vh] px-8">
+<section style="background-color: aliceblue;" class="min-h-[50vh] px-8" #review>
     <div>
         <h2 class="font-bold text-5xl pt-8 text-center text-accent">Ce que ces maîtres disent de nous :</h2>
     </div>
@@ -223,7 +224,7 @@ Notre équipe de professionnels vous répondra instantanément.
         </div>
     </div>
 </section>
-<section class="min-h-screen features-color-background" >
+<section class="min-h-screen features-color-background" #price>
         <div class="mx-auto">
             <h2 class="font-bold text-5xl pt-8 text-center text-accent">Tarif</h2>
         </div>

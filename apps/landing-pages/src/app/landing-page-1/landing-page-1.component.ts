@@ -34,8 +34,6 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
     RouterModule,
   ],
   providers: [
-    // NgIconsModule.withIcons({ ionCheckmarkDoneCircle, ionCheckmark }),
-    // provideIcons({ ionCheckmarkDoneCircle, ionCheckmark }),
     provideIcons({ ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline }),
     {
       provide: OFFER_TOKEN,

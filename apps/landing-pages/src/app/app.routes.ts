@@ -2,11 +2,11 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
     {
-        path: '',
+        path: ':offer/:price',
         loadComponent: () => import('./landing-page-1/landing-page-1.component')
     },
     {
         path: '**',
-        redirectTo: ''
+        redirectTo: '4/1'
     }
 ];

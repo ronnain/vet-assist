@@ -30,3 +30,7 @@ npx prisma init --url mysql://user:mdp@localhost:3306/database
 cela va générer le schéma prisma / regarder sur le serveur directement et le mettre à jour
 !! Créer une SHADOW_DATABASE_URL_PROSPECT à la main et lancer la variable d'env
 export SHADOW_DATABASE_URL_PROSPECT="mysql://USER:MDP@localhost:3306/DB"
+
+
+retour spartan
+pourquoi mettre les var dans styles.scss et tailwind ?

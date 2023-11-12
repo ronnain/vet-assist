@@ -9,12 +9,13 @@ import {
   HlmAlertTitleDirective,
 } from '@spartan-ng/alert-helm';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { ionCheckmarkDoneCircle } from '@ng-icons/ionicons';
+import { ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline } from '@ng-icons/ionicons';
 import { DeviceService } from '../shared/services/device.service';
 import { HlmButtonDirective } from '@spartan-ng/button-helm';
 import { DownloadButtonComponent } from '../shared/components/downloadButton/download-button.component';
 import { opacityAnimation } from '../shared/animations/opacity.animation';
-import { provideOfferToken } from '../shared/token/offer.token';
+import { OFFERS, OFFER_TOKEN } from '../shared/token/offer.token';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'lp-landing-page-1',
@@ -29,14 +30,20 @@ import { provideOfferToken } from '../shared/token/offer.token';
     HlmAlertIconDirective,
     HlmAlertTitleDirective,
     HlmButtonDirective,
-    DownloadButtonComponent
+    DownloadButtonComponent,
+    RouterModule,
   ],
   providers: [
-    provideIcons({ ionCheckmarkDoneCircle }),
-    provideOfferToken({
-      offerName: 'offer 1',
-      offerDescription: 'offer description 1'
-    })
+    // NgIconsModule.withIcons({ ionCheckmarkDoneCircle, ionCheckmark }),
+    // provideIcons({ ionCheckmarkDoneCircle, ionCheckmark }),
+    provideIcons({ ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline }),
+    {
+      provide: OFFER_TOKEN,
+      useFactory: () => {
+        const {offer, price} = inject(ActivatedRoute).snapshot.params as {offer: keyof typeof OFFERS, price: Readonly<1 | 2 | 3>};
+        return OFFERS[offer][price];
+      },
+    }
   ],
   templateUrl: './landing-page-1.component.html',
   styleUrls: ['./landing-page-1.component.scss'],
@@ -49,6 +56,8 @@ export default class LandingPage1Component {
   isBurgerMenuOpen = false;
 
   deviceService = inject(DeviceService);
+  protected readonly offer = inject(OFFER_TOKEN);
+  protected readonly extra = 'extra' in this.offer ? this.offer.extra : '';
 
   scrollToElement($element: Element): void {
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});

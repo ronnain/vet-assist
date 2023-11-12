@@ -181,7 +181,7 @@ Notre équipe de professionnels vous répondra instantanément.
     </div>
     <!-- TODO FAKE AVIS  & img description + étoiles ?-->
     <div class="wrapper-features">
-        <div class="column shadow-lg p-4">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Marion-avis.jpg">
             </div>
@@ -189,7 +189,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <div class="column shadow-lg p-4">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Karim-avis.jpg">
             </div>
@@ -197,23 +197,23 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <div class="column shadow-lg p-4">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Julien-avis.jpg">
             </div>
-            <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <h3 class="text-cyan-600 pt-4 ">TODO ADD FAKE AVIS</h3>
             <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <div class="column shadow-lg p-4">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Stephanie-avis.jpg">
             </div>
-            <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <h3 class="text-cyan-600 pt-4 ">TODO ADD FAKE AVIS</h3>
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <div class="column shadow-lg p-4">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Elsa-avis.jpg">
             </div>
@@ -222,6 +222,53 @@ Notre équipe de professionnels vous répondra instantanément.
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
     </div>
+</section>
+<section class="min-h-screen features-color-background" >
+        <div class="mx-auto">
+            <h2 class="font-bold text-5xl pt-8 text-center text-accent">Tarif</h2>
+        </div>
+        <div class="w-full flex justify-center pt-8">
+            <div class="w-full md:w-[40%] md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:-mx-3 md:mb-0 rounded-md shadow-lg shadow-gray-600 md:relative md:z-50 md:flex md:flex-col">
+                <div class="w-full flex-grow">
+                    <h2 class="text-center font-bold uppercase mb-4">Standard</h2>
+                    <h3 class="text-center font-bold text-4xl md:text-5xl mb-5"> {{offer.price}}€<span class="text-sm">/mois</span></h3>
+                    <ul class="text-sm mb-8">
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+
+                             {{offer.availability}}
+                             <ng-container *ngIf="extra">
+                                <br>
+                                <span class="text-accent text-xl"><ng-icon strokeWidth="100" name=""></ng-icon></span><!-- Use to have the correct margin -->
+                                <span class="">*{{ extra }}</span>
+                             </ng-container>
+                        </li>
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+                            Disponible depuis votre smartphone et votre navigateur
+                        </li>
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+                            Poser toutes vos questions sur vos annimaux
+                        </li>
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+                            Réponses données par des professionnels annimaliers
+                        </li>
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+                            Paiement sécurisé depuis l'application
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full">
+                    <button (click)="scrollToElement(download)" class="font-bold bg-accent hover:bg-white text-white hover:text-accent hover:border-accent hover:border-2 rounded-md px-10 py-2 transition-colors w-full">Télécharger</button>
+                </div>
+            </div>
+
+        </div>
+
+
 </section>
 
 <section>

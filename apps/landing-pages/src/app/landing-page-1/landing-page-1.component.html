@@ -85,6 +85,33 @@
     </div>
 </section>
 
+<section class="min-h-screen">
+    <div class="mx-auto">
+        <h2 class="font-bold text-5xl pt-8 text-center text-accent">Oui posez nous toutes vos questions <span class="text-4xl"><ng-icon name="ionSendOutline"/></span></h2>
+    </div>
+
+    <img class="rounded-full pt-8 mx-auto" src="assets/questions/vet.jpg">
+
+    <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
+
+        <div>
+            <h3 class="text-3xl">Un doute ? Faut-il allez chez le vétérinaire ? Est-ce une urgence ?</h3>
+            <p>Notre équipe vous guide pour adopter le comportement le plus approprié pour votre annimal.</p>
+        </div>
+
+        <div class="max-w-screen-xl mx-auto px-5 min-h-sceen">
+            <div class="smartphone">
+                <div class="content relative">
+                    <div class="max-h-[520px] overflow-y-auto py-4">
+                        <lp-live-chat-messages [messages]="messages" [currentAccountId]="authorClientId"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <section class="linear-color-background-inverted min-h-screen" #faq>
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 

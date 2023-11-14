@@ -9,7 +9,6 @@ export class ProblemStorageService {
     private readonly apiService = inject(ApiService);
 
     store(prospect: {problem: string, prospect: ProspectCreated}) {
-        console.log('store', prospect);
         return from(this.apiService.client.prospect.patchProspect(
             {
                 params: {

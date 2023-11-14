@@ -68,7 +68,7 @@ export default class LandingPage1Component {
   private authorAdminId = 2;
   protected authorClientId = 1;
 
-  messages: z.infer<typeof MessageSchema>[] = [
+  messagesBobo: z.infer<typeof MessageSchema>[] = [
     {
       authorId: this.authorClientId,
       channelId: this.channelId,
@@ -89,14 +89,111 @@ export default class LandingPage1Component {
       content: `Bonjour Marie,
 Ben mince...,
 C'est peut-être le vaccin combiné, avec le stress du changement de maison.
-Quoiqu'il en soit allez au véto bordel !
-
-  `,
+Quoiqu'il en soit allez au véto bordel !`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Bonjour Marie,
+Ben mince...,
+C'est peut-être le vaccin combiné, avec le stress du changement de maison.
+Quoiqu'il en soit allez au véto bordel !`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Bonjour Marie,
+Ben mince...,
+C'est peut-être le vaccin combiné, avec le stress du changement de maison.
+Quoiqu'il en soit allez au véto bordel !`,
       id: 1,
       storedAt: new Date(),
       type: 'TEXT',
       mediaExtension: null
     }
+  ];
+
+  messagesAlimentation: z.infer<typeof MessageSchema>[] = [
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Bonjour,
+  J'ai fait une bêtise.
+  Je trouvais Shelby trop maigre et hier soir j'ai doublé sa ration.
+  Elle a mal au ventre, elle est énorme.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Bonjour,
+Il y a un risque de dilation de l'estomac, il faut aller chez le véto.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Merci, je vais y aller.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Très bien, tenez-nous au courant.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    }
+  ];
+
+  boboDog: z.infer<typeof MessageSchema>[] = [
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Bonjour,
+  Mon chien s'est fait mal à la gencives. Que faire ?`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `assets/chat/bobo-dog.jpg`,
+      id: 2,
+      storedAt: new Date(),
+      type: 'IMAGE_URL',
+      mediaExtension: "jpg"
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Bonjour,
+Attention infection possible, surveillez...`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
   ];
 
 }

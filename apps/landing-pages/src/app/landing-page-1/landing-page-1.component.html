@@ -85,30 +85,54 @@
     </div>
 </section>
 
-<section class="min-h-screen">
+<section class="min-h-screen space-y-8  py-8">
     <div class="mx-auto">
-        <h2 class="font-bold text-5xl pt-8 text-center text-accent">Oui posez nous toutes vos questions <span class="text-4xl"><ng-icon name="ionSendOutline"/></span></h2>
+        <h2 class="font-bold text-5xl text-center text-accent">Oui posez nous toutes vos questions <span class="text-4xl"><ng-icon name="ionSendOutline"/></span></h2>
     </div>
 
     <img class="rounded-full pt-8 mx-auto" src="assets/questions/vet.jpg">
 
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
-        <div>
+        <div class="flex-1">
             <h3 class="text-3xl">Un doute ? Faut-il allez chez le vétérinaire ? Est-ce une urgence ?</h3>
             <p>Notre équipe vous guide pour adopter le comportement le plus approprié pour votre annimal.</p>
         </div>
-
-        <div class="max-w-screen-xl mx-auto px-5 min-h-sceen">
-            <div class="smartphone">
-                <div class="content relative">
-                    <div class="max-h-[520px] overflow-y-auto py-4">
-                        <lp-live-chat-messages [messages]="messages" [currentAccountId]="authorClientId"/>
-                    </div>
-                </div>
+        <div class="flex-1">
+            <div class="max-w-sm mx-auto">
+                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: messagesBobo}"></ng-template>
             </div>
-
         </div>
+
+    </div>
+
+    <div class="flex flex-row-reverse flex-wrap items-center justify-center container gap-8">
+
+        <div class="flex-1">
+            <h3 class="text-3xl">Une question sur la santé de votre compagnon ?</h3>
+            <p>Nous vous apporteront une réponse approprié pour vous accompagnez au mieux.</p>
+        </div>
+
+        <div class="flex-1">
+            <div class="max-w-sm mx-auto">
+                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: messagesAlimentation}"></ng-template>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
+
+        <div class="flex-1">
+            <h3 class="text-3xl">Un doute ? Faut-il allez chez le vétérinaire ? Est-ce une urgence ?</h3>
+            <p>Notre équipe vous guide pour adopter le comportement le plus approprié pour votre annimal.</p>
+        </div>
+        <div class="flex-1">
+            <div class="max-w-sm mx-auto">
+                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: boboDog}"></ng-template>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -233,7 +257,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <div class="column shadow-lg p-4 bg-white">
+        <!-- <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Stephanie-avis.jpg">
             </div>
@@ -248,7 +272,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
             <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-        </div>
+        </div> -->
     </div>
 </section>
 <section class="min-h-screen features-color-background" #price>
@@ -347,4 +371,13 @@ Notre équipe de professionnels vous répondra instantanément.
           <svg class="mx-1 w-4 h-4 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
         </div>
       </div>
+</ng-template>
+
+<ng-template #chatTpl let-messagesData>
+    <div class="max-h-[520px] min-h-[520px] overflow-y-scroll shadow-2xl rounded-xl pb-8">
+        <div class="drop-shadow mb-4 bg-white py-2">
+            <p class="mx-auto w-fit font-bold">BRAND</p>
+        </div>
+        <lp-live-chat-messages [messages]="messagesData" [currentAccountId]="authorClientId"/>
+    </div>
 </ng-template>

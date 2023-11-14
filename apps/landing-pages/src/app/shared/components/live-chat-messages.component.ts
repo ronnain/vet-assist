@@ -53,14 +53,7 @@ export const MessageSchema = z.object({
 
                             <div class="flex flex-row space-x-2">
                                 <div class="flex-1">
-                                    <span class="whitespace-pre-line text-sm">{{message.content}}</span>
-                                </div>
-                                <div class="flex flex-col items-end justify-end relative">
-                                    <span
-                                    class="text-xxs block relative top-1"
-                                    [ngClass]="[message.isFromCurrentUser ? 'text-primary-shade-50' : 'text-primary-shade-800']" >{{message.storedAt | date : 'H:mm' }}
-                                    </span>
-
+                                    <span class="whitespace-pre-line text-xs">{{message.content}}</span>
                                 </div>
                             </div>
 
@@ -77,14 +70,13 @@ export const MessageSchema = z.object({
                         <div
                           class="relative"
                            >
-                           IMG
-                            <!-- <img
-                                [src]="src"
+                            <img
+                                [src]="message.content"
                                 [class]="'max-w-xxs md:max-w-lg max-h-64 bg-white relative'"
-                            /> -->
-                            <div class="absolute bottom-0 w-full flex justify-end mediaHour">
+                            />
+                            <!-- <div class="absolute bottom-0 w-full flex justify-end mediaHour">
                                 <span class="text-xxs">{{ message.storedAt | date : 'H:mm' }}</span>
-                            </div>
+                            </div> -->
                         </div>
 
                         </div>
@@ -129,7 +121,7 @@ TRANSLATIONS = {
     fetchMessages: this.fetchMessages$,
   }).pipe(
     map(({inputState, fetchMessages,}) => {
-        console.log('fetchMessages', fetchMessages);
+        // console.log('fetchMessages', fetchMessages);
         const list = [...fetchMessages.list]
                         .map((message) => ({...message, isFromCurrentUser: message?.authorId === inputState?.currentAccountId}))
                         .reduce((acc, message, currentIndex, list) => {

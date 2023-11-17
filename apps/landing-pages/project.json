@@ -20,7 +20,7 @@
         ],
         "tsConfig": "apps/landing-pages/tsconfig.app.json",
         "assets": [
-          "apps/landing-pages/src/favicon.ico",
+          "apps/landing-pages/src/favicon.png",
           "apps/landing-pages/src/assets"
         ],
         "styles": [

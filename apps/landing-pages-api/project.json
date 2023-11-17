@@ -17,7 +17,8 @@
         "main": "apps/landing-pages-api/src/main.ts",
         "tsConfig": "apps/landing-pages-api/tsconfig.app.json",
         "assets": [
-          "apps/landing-pages-api/src/assets"
+          "apps/landing-pages-api/src/assets",
+          "apps/landing-pages-api/src/favicon.png"
         ],
         "isolatedConfig": true,
         "webpackConfig": "apps/landing-pages-api/webpack.config.js"

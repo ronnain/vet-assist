@@ -3,8 +3,9 @@
         <nav class="shadow">
             <div class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
               <div class="flex justify-between items-center">
-                <div>
-                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="#">Brand</a>
+                <div class="flex items-center gap-2">
+                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700 block" href="#">Coussinet</a>
+                  <img src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
                 </div>
 
                 <!-- Mobile menu button -->
@@ -235,7 +236,7 @@ Notre équipe de professionnels vous répondra instantanément.
     <div class="wrapper-features">
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/7.jpg">
+                <img class="rounded-full" src="assets/avis/7.png">
             </div>
             <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
@@ -243,7 +244,7 @@ Notre équipe de professionnels vous répondra instantanément.
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/ghost.jpg">
+                <img class="rounded-full" src="assets/avis/ghost.png">
             </div>
             <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
@@ -251,7 +252,7 @@ Notre équipe de professionnels vous répondra instantanément.
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Irina.jpg">
+                <img class="rounded-full" src="assets/avis/Irina.png">
             </div>
             <!-- <h3 class="text-primary pt-4 ">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
@@ -360,7 +361,10 @@ Notre équipe de professionnels vous répondra instantanément.
 <ng-template #chatTpl let-messagesData>
     <lp-scroll-shadow class="min-h-[520px] shadow-2xl rounded-xl" [maxHeight]="'520px'">
         <div class="drop-shadow mb-4 bg-white py-2">
-            <p class="mx-auto w-fit font-bold">BRAND</p>
+            <div class="flex items-center justify-center gap-2">
+                <p class="w-fit font-bold uppercase">Coussinet</p>
+                <img src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
+              </div>
         </div>
         <div class="pb-8">
             <lp-live-chat-messages [messages]="messagesData" [currentAccountId]="authorClientId"/>

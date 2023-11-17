@@ -40,26 +40,31 @@ import { ProgressIndeterminateComponent } from '../progress-indeterminate/progre
       #lpIsFormSubmitted="lpIsFormSubmitted"
       >
       <div
-        class="flex flex-row md:flex-row justify-start items-end w-full space-x-2"
+        class="flex flex-col md:flex-row justify-start items-end w-full md:space-x-2 gap-2"
       >
-        <label hlmLabel class="font-bold" [variant]="(lpIsFormSubmitted.isFormSubmitted && form.controls.email.invalid)? 'error' : 'default'">
+        <div class="">
+          <label hlmLabel class="block font-bold" [variant]="(lpIsFormSubmitted.isFormSubmitted && form.controls.email.invalid)? 'error' : 'default'">
 
-          <span >
-            Adresse email :
-          </span>
+            <span >
+              Adresse email :
+            </span>
 
-          <input
-            aria-label="Email"
-            class="w-full"
-            hlmInput
-            type="email"
-            placeholder="manon@gmail.com"
-            name="email"
-            formControlName="email"
-          />
+            <input
+              aria-label="Email"
+              class="w-full min-w-[300px]"
+              hlmInput
+              type="email"
+              placeholder="manon@gmail.com"
+              name="email"
+              formControlName="email"
+            />
 
-        </label>
-        <lp-download-button/>
+          </label>
+        </div>
+
+        <div class="mr-auto">
+          <lp-download-button/>
+        </div>
       </div>
       <lp-progress-indeterminate class="block mt-3" *ngIf="lpSubmitEmail.isLoading"/>
     </form>

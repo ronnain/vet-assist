@@ -24,7 +24,7 @@
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(chat)">Chat</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
-                  <!-- <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a> -->
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(price)">Tarif</a>
                 </div>
 
@@ -228,53 +228,37 @@ Notre équipe de professionnels vous répondra instantanément.
     </div>
 </section>
 
-<!-- <section style="background-color: aliceblue;" class="min-h-[50vh] px-8" #review>
+<section class="min-h-[50vh] px-8" #review>
     <div>
         <h2 class="font-bold text-5xl pt-8 text-center text-accent">Ce que ces maîtres disent de nous :</h2>
     </div>
     <div class="wrapper-features">
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Marion-avis.jpg">
+                <img class="rounded-full" src="assets/avis/7.jpg">
             </div>
-            <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <p>L'équipe m'a plus d'une fois rassuré et conseillé sur les bobo de Rocky. Merci encore.</p>
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Karim-avis.jpg">
+                <img class="rounded-full" src="assets/avis/ghost.jpg">
             </div>
-            <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
+            <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <p>Réponses rapides et efficaces, j'ai économisé plusieurs trajets chez le vétérinaire.</p>
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Julien-avis.jpg">
+                <img class="rounded-full" src="assets/avis/Irina.jpg">
             </div>
-            <h3 class="text-cyan-600 pt-4 ">TODO ADD FAKE AVIS</h3>
-            <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-        </div>
-        <div class="column shadow-lg p-4 bg-white">
-            <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Stephanie-avis.jpg">
-            </div>
-            <h3 class="text-cyan-600 pt-4 ">TODO ADD FAKE AVIS</h3>
+            <!-- <h3 class="text-primary pt-4 ">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-        </div>
-        <div class="column shadow-lg p-4 bg-white">
-            <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Elsa-avis.jpg">
-            </div>
-            <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
-            <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            <p>Mon petit chat est souvent malade, le staff m'aident dans sa prise en charge. Je me sens plus rassuré.</p>
         </div>
     </div>
-</section> -->
+</section>
 <section class="min-h-screen features-color-background" #price>
         <div class="mx-auto">
             <h2 class="font-bold text-5xl pt-8 text-center text-accent">Tarif</h2>

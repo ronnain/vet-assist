@@ -24,7 +24,7 @@
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(chat)">Chat</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a>
+                  <!-- <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a> -->
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(price)">Tarif</a>
                 </div>
 
@@ -130,7 +130,7 @@
         </div>
         <div class="flex-1">
             <div class="max-w-sm mx-auto">
-                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: boboDog}"></ng-template>
+                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: problemCat}"></ng-template>
             </div>
         </div>
 
@@ -228,11 +228,10 @@ Notre équipe de professionnels vous répondra instantanément.
     </div>
 </section>
 
-<section style="background-color: aliceblue;" class="min-h-[50vh] px-8" #review>
+<!-- <section style="background-color: aliceblue;" class="min-h-[50vh] px-8" #review>
     <div>
         <h2 class="font-bold text-5xl pt-8 text-center text-accent">Ce que ces maîtres disent de nous :</h2>
     </div>
-    <!-- TODO FAKE AVIS  & img description + étoiles ?-->
     <div class="wrapper-features">
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
@@ -258,7 +257,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         </div>
-        <!-- <div class="column shadow-lg p-4 bg-white">
+        <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img class="rounded-full" src="assets/avis/Stephanie-avis.jpg">
             </div>
@@ -273,9 +272,9 @@ Notre équipe de professionnels vous répondra instantanément.
             <h3 class="text-cyan-600 pt-4">TODO ADD FAKE AVIS</h3>
             <ng-container [ngTemplateOutlet]="FourStars"></ng-container>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-        </div> -->
+        </div>
     </div>
-</section>
+</section> -->
 <section class="min-h-screen features-color-background" #price>
         <div class="mx-auto">
             <h2 class="font-bold text-5xl pt-8 text-center text-accent">Tarif</h2>

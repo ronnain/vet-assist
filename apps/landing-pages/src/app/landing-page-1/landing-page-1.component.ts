@@ -140,7 +140,7 @@ Quoiqu'il en soit allez au véto bordel !`,
       authorId: this.authorAdminId,
       channelId: this.channelId,
       content: `Bonjour,
-Il y a un risque de dilation de l'estomac, il faut aller chez le véto.`,
+Il y a un risque de dilation de l'estomac, il faut aller chez le vétérinaire.`,
       id: 1,
       storedAt: new Date(),
       type: 'TEXT',
@@ -196,6 +196,39 @@ Attention infection possible, surveillez...`,
       type: 'TEXT',
       mediaExtension: null
     },
+  ];
+
+  problemCat: z.infer<typeof MessageSchema>[] = [
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Bonjour,
+J'ai adopté un nouveau chat pour tenir compagnie à mon chat déjà présent à la maison, mais ça se passe pas trop bien entre eux.
+Mon premier chat ne semble vraiment pas apprécier le nouveau et celui-ci semble super stressé.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Vous avez des astuces pour aider les deux à s'entendre?`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `J'aimerais vraiment qu'ils puissent cohabiter sans se chamailler tout le temps.
+Merci d'avance pour votre aide `,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    }
   ];
 
   boboCat: z.infer<typeof MessageSchema>[] = [

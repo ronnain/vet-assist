@@ -48,8 +48,8 @@
                 <div class="description">Des réponses professionnelles à toutes les questions que vous pouvez vous poser au sujet de vos compagnons </div>
                 <lp-download-button (click)="scrollToElement(download)" [displayIcons]="false"/>
                 <div class="flex flex-row gap-2" (click)="scrollToElement(download)">
-                    <img  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.svg">
-                    <img class="rounded-md max-h-[40px]" src="assets/download-stores/app-store.svg">
+                    <img loading="lazy"  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.svg">
+                    <img loading="lazy" class="rounded-md max-h-[40px]" src="assets/download-stores/app-store.svg">
                 </div>
             </div>
             <div class="right">
@@ -65,21 +65,21 @@
     <div class="wrapper-features container">
         <div class="column md:flex-grow md:flex-shrink md:w-0">
             <div class="feature-icon">
-                <img src="assets/icons/tortue.svg">
+                <img loading="lazy" src="assets/icons/tortue.svg">
             </div>
             <h3>Posez toutes vos questions !</h3>
             <p>Un accompagnement personnalisé pour répondre aux besoins de vos animaux de compagnie tout au long de leur vie.</p>
         </div>
         <div class="column md:flex-grow md:flex-shrink md:w-0">
             <div class="feature-icon">
-                <img src="assets/icons/hamster.svg">
+                <img loading="lazy" src="assets/icons/hamster.svg">
             </div>
             <h3>Au plus près de vous 24h/24, 7j/7</h3>
             <p>Obtenez une réponse instantanée via notre chat dédié, disponible sur mobile, tablette et ordinateur.</p>
         </div>
         <div class="column md:flex-grow md:flex-shrink md:w-0">
             <div class="feature-icon">
-                <img src="assets/icons/lapin.svg">
+                <img loading="lazy" src="assets/icons/lapin.svg">
             </div>
             <h3>Tous vos compagnons sont les bienvenus</h3>
             <p>Avec ou sans pattes, à poils, à plumes ou à écailles.</p>
@@ -92,7 +92,7 @@
         <h2 class="font-bold text-5xl text-center text-accent">Posez nous toutes vos questions <span class="text-4xl"><ng-icon name="ionSendOutline"/></span></h2>
     </div>
 
-    <img class="rounded-full pt-8 mx-auto" src="assets/questions/vet.jpg">
+    <img loading="lazy" class="rounded-full pt-8 mx-auto" src="assets/questions/vet.jpg">
 
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
@@ -141,7 +141,7 @@
 <section class="linear-color-background-inverted min-h-screen" #faq>
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
-        <img class="w-full max-w-[50%]" src="assets/landing-page-female/girls.png">
+        <img loading="lazy" class="w-full max-w-[50%]" src="assets/landing-page-female/girls.png">
 
         <div class="w-full max-w-screen-xl mx-auto px-5 min-h-sceen">
             <div class="flex flex-col items-center">
@@ -236,7 +236,7 @@ Notre équipe de professionnels vous répondra instantanément.
     <div class="wrapper-features">
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/7.png">
+                <img loading="lazy" class="rounded-full" src="assets/avis/7.png">
             </div>
             <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
@@ -244,7 +244,7 @@ Notre équipe de professionnels vous répondra instantanément.
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/ghost.png">
+                <img loading="lazy" class="rounded-full" src="assets/avis/ghost.png">
             </div>
             <!-- <h3 class="text-primary pt-4">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
@@ -252,11 +252,11 @@ Notre équipe de professionnels vous répondra instantanément.
         </div>
         <div class="column shadow-lg p-4 bg-white">
             <div class="feature-icon">
-                <img class="rounded-full" src="assets/avis/Irina.png">
+                <img loading="lazy" class="rounded-full" src="assets/avis/Irina.png">
             </div>
             <!-- <h3 class="text-primary pt-4 ">TODO ADD FAKE AVIS</h3> -->
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
-            <p>Mon petit chat est souvent malade, Lucie et Irina m'aident dans sa prise en charge. Je me sens plus rassurée.</p>
+            <p>Je suis très stressée et que je me pose souvent plein de questions pour comprendre mon animal et que ça me rassure d'avoir l'avis de Lucie et Irina.</p>
         </div>
     </div>
 </section>
@@ -295,6 +295,10 @@ Notre équipe de professionnels vous répondra instantanément.
                         <li class="leading-loose">
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
                             Paiement sécurisé depuis l'application
+                        </li>
+                        <li class="leading-loose">
+                            <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
+                            Abonnement mensuel sans engagement
                         </li>
                     </ul>
                 </div>
@@ -363,7 +367,7 @@ Notre équipe de professionnels vous répondra instantanément.
         <div class="drop-shadow mb-4 bg-white py-2">
             <div class="flex items-center justify-center gap-2">
                 <p class="w-fit font-bold uppercase">Coussinet</p>
-                <img src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
+                <img loading="lazy" src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
               </div>
         </div>
         <div class="pb-8">

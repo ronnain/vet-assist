@@ -53,9 +53,10 @@ module.exports = {
     fontSize: {
       'xxs': '.65rem',
       '4xs': '.50rem',
-
-    }
+    },
   },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 };

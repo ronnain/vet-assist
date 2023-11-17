@@ -18,6 +18,7 @@ import { OFFERS, OFFER_TOKEN } from '../shared/token/offer.token';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import LiveChatMessagesComponent, { MessageSchema } from '../shared/components/live-chat-messages.component';
 import { z } from 'zod';
+import ScrollShadowComponent from '../shared/components/scroll-shadow.component';
 
 @Component({
   selector: 'lp-landing-page-1',
@@ -34,7 +35,8 @@ import { z } from 'zod';
     HlmButtonDirective,
     DownloadButtonComponent,
     RouterModule,
-    LiveChatMessagesComponent
+    LiveChatMessagesComponent,
+    ScrollShadowComponent
   ],
   providers: [
     provideIcons({ ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline, ionSendOutline }),
@@ -189,6 +191,110 @@ Il y a un risque de dilation de l'estomac, il faut aller chez le véto.`,
       channelId: this.channelId,
       content: `Bonjour,
 Attention infection possible, surveillez...`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+  ];
+
+  boboCat: z.infer<typeof MessageSchema>[] = [
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Bonjour,
+Meredith a un bobo, je sais pas ce que c'est 😭
+      `,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Vous pensez que je dois l'emmener chez le véto ? 😔
+      `,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `assets/chat/bobo-chat.jpg`,
+      id: 2,
+      storedAt: new Date(),
+      type: 'IMAGE_URL',
+      mediaExtension: "jpg"
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Bonjour,
+Est-ce que vous l'avez vu se gratter ?
+Elle a peut être des puces ?
+Est-ce que c'est gonflé, ou est-ce que ça supure ?`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Non c'est pas gonflé et il n'y a pas de trou.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Ok, est-elle en forme ?
+Est-ce qu'elle mange ?`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `Oui oui`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Ok vous pouvez désinfecter et mettre une crème cicatrisante et vérifiez qu'elle soit bien à jour des antiparasitaires et si ça ne passe pas ou que son état général se dégrade il faudra prendre rendez-vous chez le vétérinaire.
+
+Vérifiez également qu'elle n'ait pas de sécrétions dans les oreilles ou de difficultés à manger comme une douleur à la mâchoire.`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorClientId,
+      channelId: this.channelId,
+      content: `D'accord
+
+Je peux mettre quoi comme désinfectant ?`,
+      id: 1,
+      storedAt: new Date(),
+      type: 'TEXT',
+      mediaExtension: null
+    },
+    {
+      authorId: this.authorAdminId,
+      channelId: this.channelId,
+      content: `Betadine ou biseptine c'est très bien, pas d'alcool.`,
       id: 1,
       storedAt: new Date(),
       type: 'TEXT',

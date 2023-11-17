@@ -26,7 +26,8 @@
             "prefix": "lp",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/no-host-metadata-property": "off"
       },
       "extends": [
         "plugin:@nx/angular",

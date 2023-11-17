@@ -96,22 +96,22 @@
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
         <div class="flex-1">
-            <h3 class="text-3xl">Un doute ? Faut-il allez chez le vétérinaire ? Est-ce une urgence ?</h3>
-            <p>Notre équipe vous guide pour adopter le comportement le plus approprié pour votre annimal.</p>
+            <h3 class="text-3xl">Urgence animale&nbsp;? Vétérinaire ou pas&nbsp;?</h3>
+            <p>Obtenez des conseils instantanés pour évaluer l'urgence. Nos experts vous guideront sur la gravité de la situation et vous orienteront vers les mesures à prendre, offrant la tranquillité d'esprit nécessaire pour la santé de votre compagnon.</p>
         </div>
         <div class="flex-1">
             <div class="max-w-sm mx-auto">
-                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: messagesBobo}"></ng-template>
+                <ng-template [ngTemplateOutlet]="chatTpl" [ngTemplateOutletContext]="{$implicit: boboCat}"></ng-template>
             </div>
         </div>
 
     </div>
 
-    <div class="flex flex-row-reverse flex-wrap items-center justify-center container gap-8">
+    <div class="flex flex-col md:flex-row-reverse flex-wrap items-center justify-center container gap-8">
 
         <div class="flex-1">
-            <h3 class="text-3xl">Une question sur la santé de votre compagnon ?</h3>
-            <p>Nous vous apporteront une réponse approprié pour vous accompagnez au mieux.</p>
+            <h3 class="text-3xl">Une question sur son alimentation&nbsp;?</h3>
+            <p>Des conseils spécialisés pour nourrir votre animal de la meilleure manière possible. Nos experts vous offriront des recommandations précises et adaptées à ses besoins spécifiques pour une alimentation saine et équilibrée.</p>
         </div>
 
         <div class="flex-1">
@@ -125,8 +125,8 @@
     <div class="flex flex-col md:flex-row items-center justify-center container gap-8">
 
         <div class="flex-1">
-            <h3 class="text-3xl">Un doute ? Faut-il allez chez le vétérinaire ? Est-ce une urgence ?</h3>
-            <p>Notre équipe vous guide pour adopter le comportement le plus approprié pour votre annimal.</p>
+            <h3 class="text-3xl">Vous voulez le meilleur pour sa santé et son bien-être ?</h3>
+            <p>Découvrez comment rendre la vie de votre compagnon plus épanouissante. Nos experts vous aideront à comprendre ses besoins émotionnels, comportementaux et environnementaux pour lui offrir une vie heureuse et équilibrée.</p>
         </div>
         <div class="flex-1">
             <div class="max-w-sm mx-auto">
@@ -375,10 +375,13 @@ Notre équipe de professionnels vous répondra instantanément.
 </ng-template>
 
 <ng-template #chatTpl let-messagesData>
-    <div class="max-h-[520px] min-h-[520px] overflow-y-scroll shadow-2xl rounded-xl pb-8">
+    <lp-scroll-shadow class="min-h-[520px] shadow-2xl rounded-xl" [maxHeight]="'520px'">
         <div class="drop-shadow mb-4 bg-white py-2">
             <p class="mx-auto w-fit font-bold">BRAND</p>
         </div>
-        <lp-live-chat-messages [messages]="messagesData" [currentAccountId]="authorClientId"/>
-    </div>
+        <div class="pb-8">
+            <lp-live-chat-messages [messages]="messagesData" [currentAccountId]="authorClientId"/>
+        </div>
+    </lp-scroll-shadow>
+
 </ng-template>

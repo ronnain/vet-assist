@@ -9,12 +9,13 @@ export class ProblemStorageService {
     private readonly apiService = inject(ApiService);
 
     store(prospect: {problem: string, prospect: ProspectCreated}) {
-        return from(this.apiService.client.prospect.patchProspect(
+        return from(this.apiService.client.prospect.updateProspect(
             {
                 params: {
                     prospectId: prospect.prospect.id.toString()
                 },
                 body: {
+                    ...prospect.prospect,
                     problem: prospect.problem
                 }
             }

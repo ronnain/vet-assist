@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../core/services/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
+import { MailService } from '../../core/services/mail/mail.service';
 
 @Injectable()
 export class ProspectStoreService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService, private mailService: MailService) {}
 
     async prospects(params: Prisma.ProspectFindManyArgs) {
         return this.prisma.prospect.findMany(params);
@@ -21,11 +22,23 @@ export class ProspectStoreService {
     }
 
     async storeEmailProspect(data: Pick<Prisma.ProspectCreateInput, 'email' | 'offerName' | 'offerDescription'>) {
-        return this.prisma.prospect.create({ data: {
-            ...data,
-            unsubscribe: false,
-            unsubscribeLink: crypto.randomUUID()
-        }});
+        const prospect = await this.prisma.prospect.upsert({
+            where: {email: data.email},
+            create: {
+                ...data,
+                unsubscribe: false,
+                unsubscribeLink: crypto.randomUUID()
+            },
+            update: {
+                ...data,
+                unsubscribe: false,
+            }});
+        try {
+            await this.mailService.main({toAddresses: [data.email]});
+        } catch (error) {
+            console.log('error', error);
+        }
+        return prospect;
     }
 
     async updateProspect(params: {

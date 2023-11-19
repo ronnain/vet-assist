@@ -4,7 +4,7 @@
             <div class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
               <div class="flex justify-between items-center">
                 <div class="flex items-center gap-2">
-                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700 block" href="#">Coussinet</a>
+                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700 block" href="#">HappyPets</a>
                   <img src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
                 </div>
 
@@ -21,7 +21,7 @@
               <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
               <div class="md:flex items-center" *ngIf="(deviceService.isMobile$ | async) === false || (deviceService.isMobile$ | async) && isBurgerMenuOpen ">
                 <div class="flex flex-col md:flex-row md:mx-6">
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(home);">Home</a>
+                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(home);">Accueil</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(chat)">Chat</a>
                   <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
@@ -31,7 +31,7 @@
 
                 <div class="flex justify-center md:block">
                   <a class="relative text-gray-700 hover:text-gray-600">
-                    <lp-download-button (click)="scrollToElement(download)"/>
+                    <lp-download-button [displayIcons]="false" (click)="scrollToElement(download)"/>
                 </a>
                 </div>
               </div>
@@ -48,8 +48,8 @@
                 <div class="description">Des réponses professionnelles à toutes les questions que vous pouvez vous poser au sujet de vos compagnons </div>
                 <lp-download-button (click)="scrollToElement(download)" [displayIcons]="false"/>
                 <div class="flex flex-row gap-2" (click)="scrollToElement(download)">
-                    <img loading="lazy"  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.svg">
-                    <img loading="lazy" class="rounded-md max-h-[40px]" src="assets/download-stores/app-store.svg">
+                    <img loading="lazy"  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.jpg">
+                    <img loading="lazy" class="rounded-md max-h-[40px]" src="assets/download-stores/app-store.jpg">
                 </div>
             </div>
             <div class="right">
@@ -74,7 +74,7 @@
             <div class="feature-icon">
                 <img loading="lazy" src="assets/icons/hamster.svg">
             </div>
-            <h3>Au plus près de vous 24h/24, 7j/7</h3>
+            <h3>Au plus près de vous 24h/24 - 7j/7</h3>
             <p>Obtenez une réponse instantanée via notre chat dédié, disponible sur mobile, tablette et ordinateur.</p>
         </div>
         <div class="column md:flex-grow md:flex-shrink md:w-0">
@@ -89,7 +89,7 @@
 
 <section class="min-h-screen space-y-8 py-8" #chat>
     <div class="mx-auto">
-        <h2 class="font-bold text-5xl text-center text-accent">Posez nous toutes vos questions <span class="text-4xl"><ng-icon name="ionSendOutline"/></span></h2>
+        <h2 class="font-bold text-5xl text-center text-accent">Posez-nous toutes vos questions !</h2>
     </div>
 
     <img loading="lazy" class="rounded-full pt-8 mx-auto" src="assets/questions/vet.jpg">
@@ -163,7 +163,7 @@
                       </span>
                         </summary>
                         <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            A l'aide de notre chat disponible sur mobile ou ordinateur, communiquez instantanément avec notre équipe de professionnels en santé et bien-être animalier.
+                            A l'aide de notre chat disponible sur mobile ou ordinateur, communiquez instantanément avec notre équipe de professionnels en santé et en bien-être animalier.
                         </p>
                     </details>
                 </div>
@@ -234,7 +234,7 @@ Notre équipe de professionnels vous répondra instantanément.
         <h2 class="font-bold text-5xl pt-8 text-center text-accent">Ce que ces maîtres disent de nous :</h2>
     </div>
     <div class="wrapper-features">
-        <div class="column shadow-lg p-4 bg-white">
+        <div class="column flex-1 shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img loading="lazy" class="rounded-full" src="assets/avis/7.png">
             </div>
@@ -242,7 +242,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Très satisfait. L'équipe m'a plus d'une fois rassuré et conseillé sur les bobo de Rocky. Merci encore.</p>
         </div>
-        <div class="column shadow-lg p-4 bg-white">
+        <div class="column flex-1 shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img loading="lazy" class="rounded-full" src="assets/avis/ghost.png">
             </div>
@@ -250,7 +250,7 @@ Notre équipe de professionnels vous répondra instantanément.
             <ng-container [ngTemplateOutlet]="FiveStars"></ng-container>
             <p>Réponses rapides et efficaces, j'ai économisée plusieurs trajets chez le vétérinaire.</p>
         </div>
-        <div class="column shadow-lg p-4 bg-white">
+        <div class="column flex-1 shadow-lg p-4 bg-white">
             <div class="feature-icon">
                 <img loading="lazy" class="rounded-full" src="assets/avis/Irina.png">
             </div>
@@ -286,11 +286,11 @@ Notre équipe de professionnels vous répondra instantanément.
                         </li>
                         <li class="leading-loose">
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
-                            Poser toutes vos questions sur vos annimaux
+                            Poser toutes vos questions sur vos animaux
                         </li>
                         <li class="leading-loose">
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
-                            Réponses données par des professionnels annimaliers
+                            Réponses données par des professionnels animaliers
                         </li>
                         <li class="leading-loose">
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
@@ -366,7 +366,7 @@ Notre équipe de professionnels vous répondra instantanément.
     <lp-scroll-shadow class="min-h-[520px] shadow-2xl rounded-xl" [maxHeight]="'520px'">
         <div class="drop-shadow mb-4 bg-white py-2">
             <div class="flex items-center justify-center gap-2">
-                <p class="w-fit font-bold uppercase">Coussinet</p>
+                <p class="w-fit font-bold">HappyPets</p>
                 <img loading="lazy" src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
               </div>
         </div>

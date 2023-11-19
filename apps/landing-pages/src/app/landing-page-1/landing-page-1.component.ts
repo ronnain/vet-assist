@@ -9,7 +9,7 @@ import {
   HlmAlertTitleDirective,
 } from '@spartan-ng/alert-helm';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline, ionSendOutline } from '@ng-icons/ionicons';
+import { ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline } from '@ng-icons/ionicons';
 import { DeviceService } from '../shared/services/device.service';
 import { HlmButtonDirective } from '@spartan-ng/button-helm';
 import { DownloadButtonComponent } from '../shared/components/downloadButton/download-button.component';
@@ -39,7 +39,7 @@ import ScrollShadowComponent from '../shared/components/scroll-shadow.component'
     ScrollShadowComponent
   ],
   providers: [
-    provideIcons({ ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline, ionSendOutline }),
+    provideIcons({ ionCheckmarkDoneCircle, ionCheckmark, ionAccessibilityOutline }),
     {
       provide: OFFER_TOKEN,
       useFactory: () => {
@@ -140,7 +140,7 @@ Quoiqu'il en soit allez au véto bordel !`,
       authorId: this.authorAdminId,
       channelId: this.channelId,
       content: `Bonjour,
-Il y a un risque de dilation de l'estomac, il faut aller chez le vétérinaire.`,
+Il y a un risque de dilation de l'estomac, il faudrait qu'un vétérinaire l'examine.`,
       id: 1,
       storedAt: new Date(),
       type: 'TEXT',
@@ -305,7 +305,7 @@ Est-ce qu'elle mange ?`,
     {
       authorId: this.authorAdminId,
       channelId: this.channelId,
-      content: `Ok vous pouvez désinfecter et mettre une crème cicatrisante et vérifiez qu'elle soit bien à jour des antiparasitaires et si ça ne passe pas ou que son état général se dégrade il faudra prendre rendez-vous chez le vétérinaire.
+      content: `Ok vous pouvez désinfecter et mettre une crème cicatrisante et vérifier qu'elle soit bien à jour des antiparasitaires et si ça ne passe pas ou que son état général se dégrade il faudra prendre rendez-vous chez le vétérinaire.
 
 Vérifiez également qu'elle n'ait pas de sécrétions dans les oreilles ou de difficultés à manger comme une douleur à la mâchoire.`,
       id: 1,
@@ -317,7 +317,6 @@ Vérifiez également qu'elle n'ait pas de sécrétions dans les oreilles ou de d
       authorId: this.authorClientId,
       channelId: this.channelId,
       content: `D'accord
-
 Je peux mettre quoi comme désinfectant ?`,
       id: 1,
       storedAt: new Date(),

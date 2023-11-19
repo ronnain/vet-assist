@@ -44,46 +44,46 @@ export const OFFERS = {
   3: {
     1: {
       offerName: 'offer 3 - 9.90€',
-      offerDescription: '7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: '7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "9.90"
     },
     2: {
       offerName: 'offer 3 - 11.90€',
-      offerDescription: '7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: '7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "11.90"
     },
     3: {
       offerName: 'offer 3 - 14.90€',
-      offerDescription: '7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: '7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "14.90"
     },
   },
   4: {
     1: {
       offerName: 'offer 4 - 9.90€',
-      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "9.90"
     },
     2: {
       offerName: 'offer 4 - 11.90€',
-      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "11.90"
     },
     3: {
       offerName: 'offer 4 - 14.90€',
-      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la question de 22h à 7h',
+      offerDescription: 'Ne devrait pas arriver :7h à 22h + majoration de 2€ la conversation de 22h à 7h',
       availability: 'Accès au chat 24h/24 - 7j/7',
-      extra: 'Majoration de 2€ la question de 22h à 7h',
+      extra: 'Majoration de 2€ la conversation de 22h à 7h',
       price: "14.90"
     }
   }

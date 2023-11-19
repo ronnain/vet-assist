@@ -63,7 +63,7 @@ import { ProgressIndeterminateComponent } from '../progress-indeterminate/progre
         </div>
 
         <div class="mr-auto">
-          <lp-download-button/>
+          <lp-download-button [displayIcons]="false"/>
         </div>
       </div>
       <lp-progress-indeterminate class="block mt-3" *ngIf="lpSubmitEmail.isLoading"/>

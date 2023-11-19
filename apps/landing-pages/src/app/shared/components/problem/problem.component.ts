@@ -35,7 +35,7 @@ import { ProgressIndeterminateComponent } from '../progress-indeterminate/progre
         #lpIsFormSubmitted="lpIsFormSubmitted"
         [variant]="(lpIsFormSubmitted.isFormSubmitted && form.controls.problem.invalid)? 'error' : 'default'"
         >
-        <span>Quel est plus gros problème que vous rencontrez avec votre animal / vos animaux ?</span>
+        <span>Quel est le plus gros problème que vous rencontrez avec votre animal / vos animaux ?</span>
         <textarea
           aria-label="Problem"
           class="w-full max-w-2xl min-h-[80px]"

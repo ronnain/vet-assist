@@ -1,11 +1,13 @@
 $cta-color: #ffae00;
 
+// Retours incroyables de Pauline: https://www.notion.so/Landing-page-a599bd0ac64648a09b7bd90e9331d7b5
+
 .wrapper {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 72px);
     max-width: 100vw;
     overflow: hidden;
     padding: 2rem 0;
@@ -31,7 +33,6 @@ $cta-color: #ffae00;
 
         .description {
             font-size: 1em;
-            color: #6a6a6f;
             margin: 2rem 0;
         }
 
@@ -51,6 +52,178 @@ $cta-color: #ffae00;
             }
         }
     }
+}
+
+.wrapper .left {
+	/* Centrer le contenu et ajouter un padding entre le texte et l'image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 3rem;
+}
+
+@media screen and (max-width: 769px) {
+    .wrapper .left {
+        margin-top: 3rem
+    }
+}
+
+.wrapper .right .image {
+	/* Appliquer une largeur max à l'image et la centrer */
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 769px) {
+    .wrapper .right .image {
+        margin-top: 3rem
+    }
+}
+
+@media screen and (min-width: 1750px) {
+    .wrapper .right .image {
+	/* Pour que l'image fasse moins petite dans les grandes résolutions */
+	/* Hésite pas à augmenter cette valeur d'ailleurs */
+        max-width: 35rem;
+    }
+}
+
+// block features
+.wrapper-features {
+    align-items: flex-start !important;
+}
+
+.wrapper-features .feature-icon {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 769px) {
+.wrapper-features {
+	/* Pour recentrer les éléments sur mobile */
+    align-items: center !important;
+}
+}
+
+.wrapper-features h3 {
+	/* Pour centrer les titres sur certaines dimensions tablette et mobile */
+    text-align: center;
+}
+
+.features-color-background:first-of-type {
+    background-color: #7EA6B6;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.features-color-background:first-of-type h3 {
+    color: #0C0C0C;
+}
+
+.features-color-background:first-of-type p {
+    color: #111;
+}
+
+// demo
+.features-color-background:first-of-type + section {
+    /* Hésite pas à le réduire sur mobile si nécessaire, en testant je trouve que c'est correct */
+    padding: 7rem 0;
+}
+
+.features-color-background:first-of-type + section > img {
+    /* Pour réduire un peu la taille de l'image */
+    max-width: 35rem;
+}
+
+@media screen and (max-width: 769px) {
+    /* Taille de l'image sur mobile */
+    .features-color-background:first-of-type + section > img {
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+}
+
+.features-color-background:first-of-type + section > .container {
+    /* Augmenter un peu la margin top des containers des exemples pour espacer un peu */
+    margin-top: 7rem !important;
+}
+
+.features-color-background:first-of-type + section > .container h3 {
+    /* Pour reprendre le code couleur du bloc du dessus */
+    color: #0C0C0C;
+}
+
+.features-color-background:first-of-type + section > .container p {
+    /* Pour reprendre le code couleur du bloc du dessus */
+    color: #111;
+    /* Ajouter une petite margin-top aux textes */
+    margin-top: 1rem;
+}
+
+// FAQ
+.linear-color-background-inverted {
+    /* Centrer le contenu verticalement */
+    display: flex;
+    /* Padding haut et bas du block */
+    padding: 7rem 0;
+
+}
+
+.linear-color-background-inverted img {
+    /* Taille de l'image */
+    max-width: 33rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .linear-color-background-inverted > div {
+        /* Déplacer l'image au dessus du texte sur petit desktop */
+        flex-direction: column;
+    }
+
+    .linear-color-background-inverted img {
+        /* Taille de l'image sur petit desktop */
+        max-width: 20rem;
+        /* Espacement entre l'image et le contenu */
+        margin-bottom: 3rem;
+    }
+}
+
+.linear-color-background-inverted img + div {
+    /* J'ai supprimé le padding de droite qui sert pas vraiment et ajouté du padding vers l'image */
+    padding: 0 0 0 4rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .linear-color-background-inverted img + div {
+        padding: 0;
+    }
+}
+
+.linear-color-background-inverted h2 {
+    /* Couleur du titre */
+    color: #202020;
+}
+
+.linear-color-background-inverted h2 {
+    /* Couleur du titre */
+    color: #202020;
+}
+
+.linear-color-background-inverted details summary span:first-child {
+    /* Couleur des titres des éléments de faq */
+    color: #202020;
+    /* Pour accentuer un peu le titre par rapport à la réponse */
+    font-size: 1.1rem;
+    font-weight: 600 !important;
+}
+
+
+.linear-color-background-inverted h2 + p {
+    /* Couleur du sous-titre */
+    color: #373737;
+}
+
+.linear-color-background-inverted details p {
+    /* Couleur des textes des éléments de faq */
+    color: #373737 !important;
 }
 
 .container {
@@ -123,4 +296,113 @@ $cta-color: #ffae00;
 .form {
     padding: 2rem 0;
 }
+
+header {
+	/* J'ai ajouté une box-shadow aussi pour tester, ça m'a paru sympa donc je te l'ai laissée au cas où */
+	/* Je sais que tu utilises tailwind et t'en auras pas forcément besoin, mais un site sympa au cas où pour les box shadows https://getcssscan.com/css-box-shadow-examples */
+	background-color: #00000055;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+@media screen and (max-width: 769px) {
+    header div.flex.flex-col {
+        /* Pour ajouter un peu d'espace autour de la liste de liens */
+      margin: 0.8rem 0;
+    }
+    header div.flex.flex-col a {
+        /* Ici j'ai mis un padding en plus de la margin sur les éléments lien */
+        /* Le padding entre en compte dans la zone cliquable alors que la margin non, donc les liens seront plus facilement cliquables */
+      padding: 0.4rem 0;
+    }
+    }
+
+    // avis:
+    .linear-color-background-inverted + section {
+        /* Padding haut et bas du block */
+        padding: 7rem 0;
+    }
+
+    .linear-color-background-inverted + section .wrapper-features {
+        /* Espacement avec le titre */
+        margin-top: 3rem;
+        /* Padding sur les côtés */
+        padding: 0 5rem;
+        /* Permet que les containers de témoignages aient tous la même hauteur */
+        align-items: normal !important;
+    }
+
+    @media screen and (max-width: 769px) {
+        .linear-color-background-inverted + section .wrapper-features {
+            /* Padding sur les côtés */
+            padding: 0 1.1rem;
+        }
+    }
+
+    .linear-color-background-inverted + section .wrapper-features .column {
+        /* Padding des containers de témoignages */
+        padding: 1.5rem;
+    }
+
+    .linear-color-background-inverted + section .wrapper-features p {
+        /* Pour uniformiser avec les couleurs de texte sur fond blanc */
+        color: #0C0C0C;
+    }
+
+    // price
+    .linear-color-background-inverted + section + section {
+        /* Padding haut et bas du block */
+        padding: 7rem 0;
+        /* Centrer le contenu verticalement dans le block */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* couleur de fond pour suivre avec le block de rassurances */
+        background-color: #7EA6B6 !important;
+        /* la box shadow sympa */
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    }
+
+    @media screen and (max-width: 769px) {
+            /* padding sur mobile */
+        .linear-color-background-inverted + section + section > div {
+            padding: 0 1.2rem;
+        }
+    }
+
+    .linear-color-background-inverted + section + section > div > h2 {
+        /* Couleur du titre pour reprendre l */
+        color: #0C0C0C;
+        /* Espacement entre le titre et le block tarif */
+        margin-bottom: 1rem;
+    }
+
+    .linear-color-background-inverted + section + section > div + div h2 {
+        /* couleur du titre */
+        color: #0C0C0C;
+        /* légère accentuation du titre */
+        font-size: 1.3rem;
+    }
+
+    .linear-color-background-inverted + section + section > div + div h3 {
+        /* couleur du titre */
+        color: #0C0C0C;
+        /* espace avec les features */
+        margin-bottom: 3.5rem;
+    }
+
+    .linear-color-background-inverted + section + section > div + div li {
+        /* couleur des éléments de liste */
+        color: #111;
+        /* espacement entre les éléments */
+        margin: .7rem 0;
+    }
+
+    .linear-color-background-inverted + section + section > div + div li span {
+        /* couleur des éléments de liste */
+        display: inline-block;
+        /* j'ai pas trouvé d'autre solution que le transform ici */
+        transform: translateY(4px);
+        /* Espacement avec le texte */
+        margin-right: .5rem;
+    }
 

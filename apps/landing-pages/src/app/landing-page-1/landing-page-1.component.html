@@ -4,13 +4,13 @@
             <div class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
               <div class="flex justify-between items-center">
                 <div class="flex items-center gap-2">
-                  <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700 block" href="#">HappyPets</a>
+                  <a class="text-white text-xl font-bold md:text-2xl block" href="#">HappyPets</a>
                   <img src="assets/coussinet-logo.png" alt="" class="block max-w-[40px]">
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="flex md:hidden">
-                  <button (click)="isBurgerMenuOpen = !isBurgerMenuOpen" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
+                  <button (click)="isBurgerMenuOpen = !isBurgerMenuOpen" type="button" class="text-white hover:text-white focus:outline-none focus:text-white" aria-label="toggle menu">
                     <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
                       <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                     </svg>
@@ -21,12 +21,12 @@
               <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
               <div class="md:flex items-center" *ngIf="(deviceService.isMobile$ | async) === false || (deviceService.isMobile$ | async) && isBurgerMenuOpen ">
                 <div class="flex flex-col md:flex-row md:mx-6">
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(home);">Accueil</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(chat)">Chat</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a>
-                  <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" (click)="scrollToElement(price)">Tarif</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(home);">Accueil</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(features)">Caractéristiques</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(chat)">Chat</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(faq)">FAQ</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(review)">Avis</a>
+                  <a class="my-1 text-sm text-white font-medium hover:text-accent md:mx-4 md:my-0" (click)="scrollToElement(price)">Tarif</a>
                 </div>
 
                 <div class="flex justify-center md:block">
@@ -43,9 +43,9 @@
         <div class="wrapper container">
             <div class="left space-y-2">
                 <div class="title" #home>
-                    <h1>L'application qu'il vous faut en tant que maître d'animaux !</h1>
+                    <h1 class="text-gray-900">L'application qu'il vous faut en tant que maître d'animaux !</h1>
                 </div>
-                <div class="description">Des réponses professionnelles à toutes les questions que vous pouvez vous poser au sujet de vos compagnons </div>
+                <div class="description text-gray-800">Des réponses professionnelles à toutes les questions que vous pouvez vous poser au sujet de vos compagnons </div>
                 <lp-download-button (click)="scrollToElement(download)" [displayIcons]="false"/>
                 <div class="flex flex-row gap-2" (click)="scrollToElement(download)">
                     <img loading="lazy"  class="rounded-md max-h-[40px]" src="assets/download-stores/google-play.jpg">
@@ -153,76 +153,37 @@
                 </p>
             </div>
             <div class="grid divide-y divide-slate-500 max-w-xl mx-auto mt-8">
+
                 <div class="py-5">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span>Le principe ? </span>
-                            <span class="transition group-open:rotate-180">
-                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-        </svg>
-                      </span>
-                        </summary>
-                        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            A l'aide de notre chat disponible sur mobile ou ordinateur, communiquez instantanément avec notre équipe de professionnels en santé et en bien-être animalier.
-                        </p>
-                    </details>
+                    <span class="font-bold text-lg">Le principe ? </span>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        A l'aide de notre chat disponible sur mobile ou ordinateur, communiquez instantanément avec notre équipe de professionnels en santé et en bien-être animalier.
+                    </p>
                 </div>
                 <div class="py-5">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span>Quelles questions puis-je poser ?</span>
-                            <span class="transition group-open:rotate-180">
-                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-        </svg>
-                      </span>
-                        </summary>
-                        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            Posez toutes les questions qui vous passent par la tête au sujet de vos animaux de compagnie, concernant leur santé ou leur bien-être.
+                    <span class="font-bold text-lg">Quelles questions puis-je poser ?</span>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        Posez toutes les questions qui vous passent par la tête au sujet de vos animaux de compagnie, concernant leur santé ou leur bien-être.
 Notre équipe de professionnels vous répondra instantanément.
-                        </p>
-                    </details>
+                    </p>
                 </div>
                 <div class="py-5">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span>Quels animaux sont concernés ? </span>
-                            <span class="transition group-open:rotate-180">
-                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-        </svg>
-                      </span>
-                        </summary>
-                        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            Tous vos animaux sont les bienvenus et recevront des conseils adaptés. Chats, chiens, rongeurs, oiseaux, tortues, serpents, lézards…
-                        </p>
-                    </details>
+                    <span class="font-bold text-lg">Quels animaux sont concernés ? </span>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        Tous vos animaux sont les bienvenus et recevront des conseils adaptés. Chats, chiens, rongeurs, oiseaux, tortues, serpents, lézards…
+                    </p>
                 </div>
                 <div class="py-5">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span>Comment accéder à notre service ? </span>
-                            <span class="transition group-open:rotate-180">
-                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-        </svg>
-                      </span>
-                        </summary>
-                        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            Nos services sont disponibles sur notre application mobile (IOS ou Android) ou depuis notre site internet. <span (click)="scrollToElement(download)">Rendez-vous ici pour accéder à l'application.</span>
-                        </p>
-                    </details>
+                    <span class="font-bold text-lg">Comment accéder à notre service ? </span>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        Nos services sont disponibles sur notre application mobile (IOS ou Android) ou depuis notre site internet. <span (click)="scrollToElement(download)">Rendez-vous ici pour accéder à l'application.</span>
+                    </p>
                 </div>
                 <div class="py-5">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span>A quel moment puis-je vous écrire ?</span>
-                            <span class="transition group-open:rotate-180">
-                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-        </svg>
-                      </span>
-                        </summary>
-                        <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                            Notre équipe répond à vos questions tout au long de la journée tous les jours de la semaine, ainsi qu'à vos urgences la nuit.
-                        </p>
-                    </details>
+                    <span class="font-bold text-lg">A quel moment puis-je vous écrire ?</span>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        Notre équipe répond à vos questions tout au long de la journée tous les jours de la semaine, ainsi qu'à vos urgences la nuit.
+                    </p>
                 </div>
             </div>
         </div>
@@ -292,7 +253,7 @@ Notre équipe de professionnels vous répondra instantanément.
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
                             Réponses données par des professionnels animaliers
                         </li>
-wq                        <li class="leading-loose">
+                        <li class="leading-loose">
                             <span class="text-accent text-xl"><ng-icon strokeWidth="100" name="ionCheckmark"></ng-icon></span>
                             Paiement sécurisé depuis l'application
                         </li>
